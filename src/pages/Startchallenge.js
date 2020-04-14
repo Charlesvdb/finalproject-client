@@ -30,15 +30,16 @@ class Startchallenge extends React.Component {
         event.preventDefault()
         axios({
             method: "POST",
-            url: "localhost:3000/startchallenge",
+            url: "http://localhost:3000/startchallenge",
             data: qs.stringify(this.state),
-            headers: {"content-type": "application/x-www-form-urlencoded"}
+            headers: {"content-type": "application/x-www-form-urlencoded"},
+            withCredentials: true
         })
-        .then((response) => {
+        .then(() => {
             this.props.history.push("/allchallenges")
         })
         .catch((error) => {
-            console.log(error.response.data)
+            console.log(error.response)
         })
     }
 
@@ -50,12 +51,12 @@ class Startchallenge extends React.Component {
 
                 <form className="startchallenge" onSubmit={this.handleFormSubmit}>
                     <div className="titlepart">
-                        <label className="titlelabel" for="title">Title of your challenge:</label><br></br>
+                        <label className="titlelabel" htmlFor="title">Title of your challenge:</label><br></br>
                         <input className="titleform" type="text" name="title" value={this.state.title} placeholder="Please give your challenge a good title!" onChange={(e) => this.handleChange(e)}></input>
                     </div>
 
                     <div className="descriptionpart">
-                        <label className="descriptionlabel" for="description">Description of challenge:</label><br></br>
+                        <label className="descriptionlabel" htmlFor="description">Description of challenge:</label><br></br>
                         <input className="descriptionform" type="textarea" name="description" value={this.state.description} placeholder="Please add a description of your challenge here!" onChange={(e) => this.handleChange(e)}></input>
                     </div>
 

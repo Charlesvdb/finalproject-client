@@ -1,0 +1,16 @@
+.challengesectionbox {
+    border: 2px solid black;
+    background-color: white;
+    color: black;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.challengedetailpage{
+    margin-top: 20px;
+}
+
+.responsechallenges{
+    display: flex;
+    flex-direction: row;
+}

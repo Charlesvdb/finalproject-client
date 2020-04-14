@@ -8,6 +8,7 @@ import Login from "./pages/Login"
 import Profile from "./pages/Profile"
 import Friends from './pages/Friends';
 import Startchallenge from './pages/Startchallenge';
+import Challengedetail from './pages/Challengedetail';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/allchallenges" component={Allchallenges} />
           <Route path="/friendsfollowers" component={Friends} />
           <Route path="/startchallenge" component={Startchallenge} />
+          <Route path="/challengedetail" component={Challengedetail} />
     </Switch>
 
     </div>

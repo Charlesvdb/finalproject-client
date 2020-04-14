@@ -1,0 +1,37 @@
+.challengebox{
+    display: flex;
+    flex-direction: row;
+    margin-left: 158px;
+    margin-right: 40px;
+    margin-top: 10px;
+}
+
+.challengerpic{
+    width: 100px;
+}
+
+.boxchallenge{
+    border: 1.5px solid red;
+    width: 1000px;
+    height: 130px;
+    margin-left: 10px;
+}
+
+.responsecounter {
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+    border: 1.5px solid red;
+    margin-left: 10px;
+}
+
+.responsenumber{
+    color: red;
+    font-size: 32px;
+    margin-bottom: 0;
+    font-weight: bold;
+}
+
+.responsetext{
+    font-weight: bold;
+}

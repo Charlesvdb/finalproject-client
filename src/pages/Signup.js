@@ -50,13 +50,13 @@ class Signup extends React.Component {
                 
                 <form className="formcontainer" onSubmit={this.handleFormSubmit}>
                     <div className="userpart">
-                        <label className="userlabel" for="username">First name:</label><br></br>
+                        <label className="userlabel" htmlFor="username">First name:</label><br></br>
                         <input className="userform" type="text" name="username" value={this.state.username} placeholder="How should we call you, legend?" onChange={(e) => this.handleChange(e)}></input>
                     </div>
 
                     <div className="passwordpart">
-                        <label className="passwordlabel" for="username">Password:</label><br></br>
-                        <input className="passwordform" type="text" name="password" value={this.state.password} placeholder="Which password will keep all your crazy pictures safe?" onChange={(e) => this.handleChange(e)}></input>
+                        <label className="passwordlabel" htmlFor="username">Password:</label><br></br>
+                        <input className="passwordform" type="password" name="password" value={this.state.password} placeholder="Which password will keep all your crazy pictures safe?" onChange={(e) => this.handleChange(e)}></input>
                     </div>
                     <button className="signupbutton">Sign up</button>
                 </form>
