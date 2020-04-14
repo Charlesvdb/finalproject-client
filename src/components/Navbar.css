@@ -1,5 +1,18 @@
+a {
+    text-decoration: none;
+    color: red;
+    font-size: 20px;
+}
+
 .navcontainer{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    align-items: center;
+    border-bottom: 3px solid red;
+    color: red;
+}
+
+.logostreet{
+    width: 200px;
 }

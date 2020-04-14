@@ -1,6 +1,7 @@
 import React from 'react'
+import './Frienddetail.css'
 
-class About extends React.Component {
+class Frienddetail extends React.Component {
     constructor() {
         super()
 
@@ -11,9 +12,9 @@ class About extends React.Component {
 
     render() {
         return (
-            <h1>About page</h1>
+
         )
     }
 }
 
-export default About
+export default Frienddetail

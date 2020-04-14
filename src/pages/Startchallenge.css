@@ -1,37 +1,32 @@
-.userform{
+.titleform{
     width: 500px;
     height: 30px;
     border: 1.5px solid red;
     border-radius: 4px;
 }
 
-.passwordform{
+.descriptionform{
     width: 500px;
-    height: 30px;   
+    height: 150px;
     border: 1.5px solid red;
     border-radius: 4px;
 }
 
-.passwordpart{
+.descriptionpart{
     margin-top: 20px;
 }
 
-.pictureplank{
-    width: 450px;
-    margin-top: 30px;
-}
-
-.userlabel{
-    margin-right: 427px;
+.titlelabel{
+    margin-right: 345px;
     color: red;
 }
 
-.passwordlabel{
-    margin-right: 433px;
+.descriptionlabel{
+    margin-right: 330px;
     color: red;
 }
 
-.signupbutton{
+.addchallengebutton{
     box-shadow:inset 0px 1px 0px 0px #f29c93;
 	background:linear-gradient(to bottom, #fe1a00 5%, #ce0100 100%);
 	background-color:#ce0100;
@@ -46,5 +41,5 @@
 	padding:6px 24px;
 	text-decoration:none;
     text-shadow:0px 1px 0px #b23e35;
-    margin-top: 15px;
+    margin-top: 40px;
 }

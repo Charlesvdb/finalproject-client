@@ -1,4 +1,6 @@
 import React from "react"
+import './Navbar.css';
+import {Link} from "react-router-dom";
 
 class Navbar extends React.Component {
     constructor() {
@@ -12,10 +14,16 @@ class Navbar extends React.Component {
     render() {
         return (
             <nav className="navcontainer">
-                <a href="/allchallenges">HOME</a>
-                <a href="/about">ABOUT</a>
-                <a href="#">LOGIN/LOGOUT</a>
-                <a href="#">HOW IT WORKS</a>
+
+                <Link to="/allchallenges">
+                    <img className="logostreet" src="/images/logo.png" alt="logo" />
+                </Link>
+
+                <Link to="/allchallenges"><strong>All challenges</strong></Link>
+                <Link to="/startchallenge"><strong>Start a challenge</strong></Link>
+                <Link to="/profile"><strong>Profile settings</strong></Link>
+                <Link to="/friendsfollowers"><strong>Friends</strong></Link>
+                <Link to="/"><strong>Log out</strong></Link>
             </nav>            
         )
     }

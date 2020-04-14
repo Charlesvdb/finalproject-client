@@ -34,7 +34,7 @@ class Home extends React.Component {
                 
                 <div className="buttoncontainer">
                     <Link to="/signup"><button className="signuplogin">Sign up you coward!</button></Link>
-                    <button className="signuplogin">Log in & enjoy the ride!</button>
+                    <Link to="/login"><button className="signuplogin">Log in & enjoy the ride!</button></Link>
                 </div>
 
                 <br/>
@@ -47,11 +47,11 @@ class Home extends React.Component {
 
                 <div className="row"> 
                     <div className="column">
-                        <img src="/images/corn.jpg" style={{width: 250}}/>
-                        <img src="/images/crazy.jpg" style={{width:250}}/>
-                        <img src="/images/planking2.jpg" style={{width:280}}/>
-                        <img src="/images/horsemanning1.jpg" style={{width:245}}/>
-                        <img src="/images/planking.jpg" style={{width:260}}/>
+                        <img src="/images/corn.jpg" style={{width: 250}} alt=""/>
+                        <img src="/images/crazy.jpg" style={{width:250}} alt=""/>
+                        <img src="/images/planking2.jpg" style={{width:280}} alt=""/>
+                        <img src="/images/horsemanning1.jpg" style={{width:245}} alt=""/>
+                        <img src="/images/planking.jpg" style={{width:260}} alt=""/>
                     </div>
                 </div>
 

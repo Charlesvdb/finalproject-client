@@ -1,4 +1,5 @@
 import React from 'react'
+import DefaultLayout from "../layout/Default"
 
 class Allchallenges extends React.Component {
     constructor() {
@@ -11,7 +12,9 @@ class Allchallenges extends React.Component {
 
     render() {
         return (
-            <h1>All challenges</h1>
+            <DefaultLayout>
+                <h1>All challenges</h1>
+            </DefaultLayout>
         )
     }
 }
