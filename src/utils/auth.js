@@ -25,7 +25,7 @@ export const login = (user) => {
         data: qs.stringify(user)
     })
     .then((response) => {
-        setUser(response.data)
+        getUser(response.data)
     })
 } 
 

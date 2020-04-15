@@ -15,6 +15,7 @@ class Responsechallenge extends React.Component {
                 <div className="responsesectionbox">
                     <h2>Name Daredevil</h2>
                     <img className="imagedaredevil" src="/images/CVDB.png" alt="" ></img>
+                    <h3>"Picture caption #streetcredit"</h3>
                 </div>
                )
     }

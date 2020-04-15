@@ -1,25 +1,48 @@
 import React from 'react'
 import DefaultLayout from "../layout/Default"
 import Challengebox from '../components/Challengebox'
-import {Link} from "react-router-dom"
-
+import axios from "axios";
 
 class Allchallenges extends React.Component {
     constructor() {
         super()
 
         this.state = {
-            
+           challenges: [] 
         }
+    }
+
+    componentDidMount(){
+        debugger
+        axios({
+            method: "GET",
+            url: "http://localhost:3000/allchallenges",
+            withCredentials: true
+        })
+        .then(response => {
+            console.log(response)
+            let challengeslist = response.data;
+            this.setState({challenges: challengeslist})
+        })
+        .catch(error => {
+            console.log("You've made an error charles: ",error)
+        })
     }
 
     render() {
         return (
             <DefaultLayout>
-                <h1>All challenges</h1>
-            
-                <Link to="/challengedetail"><Challengebox/></Link>
-                <Challengebox/>
+                <div className="challengeoverviewlist">
+                    <h1>All challenges</h1>   
+
+                    <div className="challengeboxes">
+                    {    
+                    this.state.challenges.map(challenge => (<Challengebox key={challenge._id} id={challenge._id} title={challenge.title} description={challenge.description}/>))      
+                    }
+                    
+                    </div>
+
+                </div>    
             </DefaultLayout>
         )
     }

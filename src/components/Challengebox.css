@@ -13,8 +13,9 @@
 .boxchallenge{
     border: 1.5px solid red;
     width: 1000px;
-    height: 130px;
+    height: 140px;
     margin-left: 10px;
+    color: black;
 }
 
 .responsecounter {
@@ -34,4 +35,6 @@
 
 .responsetext{
     font-weight: bold;
+    color: black;
+    font-size: 16px;
 }

@@ -20,7 +20,7 @@ function App() {
           <Route path="/login" component={Login} />
           <Route path="/profile" component={Profile} />
           <Route path="/allchallenges" component={Allchallenges} />
-          <Route path="/friendsfollowers" component={Friends} />
+          <Route path="/friends" component={Friends} />
           <Route path="/startchallenge" component={Startchallenge} />
           <Route path="/challengedetail" component={Challengedetail} />
     </Switch>

@@ -22,7 +22,7 @@ class Navbar extends React.Component {
                 <Link to="/allchallenges"><strong>All challenges</strong></Link>
                 <Link to="/startchallenge"><strong>Start a challenge</strong></Link>
                 <Link to="/profile"><strong>Profile settings</strong></Link>
-                <Link to="/friendsfollowers"><strong>Friends</strong></Link>
+                <Link to="/friends"><strong>Friends</strong></Link>
                 <Link to="/"><strong>Log out</strong></Link>
             </nav>            
         )
