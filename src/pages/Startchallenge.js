@@ -30,7 +30,7 @@ class Startchallenge extends React.Component {
         event.preventDefault()
         axios({
             method: "POST",
-            url: "http://localhost:3000/startchallenge",
+            url: `${process.env.REACT_APP_API}/startchallenge`,
             data: qs.stringify(this.state),
             headers: {"content-type": "application/x-www-form-urlencoded"},
             withCredentials: true

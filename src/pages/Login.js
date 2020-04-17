@@ -51,7 +51,7 @@ class Login extends React.Component {
                 <h1>Login and start challenging your friends!</h1>
                 <h2>Show us what you got!</h2>
                 
-                <form className="formcontainer" onSubmit={this.handleFormSubmit}>
+                <form className="formcontainerlogin" onSubmit={this.handleFormSubmit}>
                     <div className="userpart">
                         <label className="userlabel">First name:</label><br></br>
                         <input className="userform" type="text" name="username" value={this.state.username} placeholder="What was your username again?" onChange={(event) => this.handleChange(event)}></input>

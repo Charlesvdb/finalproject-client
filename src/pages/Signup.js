@@ -48,7 +48,7 @@ class Signup extends React.Component {
                 <h1>Become part of our community!</h1>
                 <h2>Create a username and password first, daredevil!</h2>
                 
-                <form className="formcontainer" onSubmit={this.handleFormSubmit}>
+                <form className="formcontainersignup" onSubmit={this.handleFormSubmit}>
                     <div className="userpart">
                         <label className="userlabel" htmlFor="username">First name:</label><br></br>
                         <input className="userform" type="text" name="username" value={this.state.username} placeholder="How should we call you, legend?" onChange={(e) => this.handleChange(e)}></input>

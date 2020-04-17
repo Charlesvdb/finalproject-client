@@ -16,7 +16,7 @@ class Allchallenges extends React.Component {
         debugger
         axios({
             method: "GET",
-            url: "http://localhost:3000/allchallenges",
+            url: `${process.env.REACT_APP_API}/allchallenges`,
             withCredentials: true
         })
         .then(response => {
@@ -36,6 +36,7 @@ class Allchallenges extends React.Component {
                     <h1>All challenges</h1>   
 
                     <div className="challengeboxes">
+                    
                     {    
                     this.state.challenges.map(challenge => (<Challengebox key={challenge._id} id={challenge._id} title={challenge.title} description={challenge.description}/>))      
                     }

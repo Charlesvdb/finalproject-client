@@ -15,7 +15,7 @@ class Home extends React.Component {
     }
 
     componentDidMount() {
-        axios.get("http://localhost:3000/name")
+        axios.get(`${process.env.REACT_APP_API}/name`)
         .then(response => {
             this.setState({
                 charles: response.data

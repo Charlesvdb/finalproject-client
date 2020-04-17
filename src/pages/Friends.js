@@ -1,7 +1,7 @@
 import React from 'react'
 import DefaultLayout from "../layout/Default"
 import './Friends.css'
-import axios from 'axios'
+// import axios from 'axios'
 
 class Friendsfollowers extends React.Component {
     constructor() {
@@ -21,12 +21,12 @@ class Friendsfollowers extends React.Component {
         })
     }
 
-    handleFormSubmit(event){
-        event.preventDefault()
-        axios.get("http://localhost:3000/friends")
-        .then()
+    // handleFormSubmit(event){
+    //     event.preventDefault()
+    //     axios.get(`${process.env.REACT_APP_API}/friends")`
+    //     .then()
 
-    }
+    // }
 
     render() {
         return (
