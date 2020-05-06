@@ -15,7 +15,7 @@ class Home extends React.Component {
     }
 
     componentDidMount() {
-        axios.get(`${process.env.REACT_APP_API}/name`)
+        axios.get(`${process.env.REACT_APP_API_BASE}/name`)
         .then(response => {
             this.setState({
                 charles: response.data
@@ -38,20 +38,10 @@ class Home extends React.Component {
                 </div>
 
                 <br/>
-                <br/>    
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
 
                 <div className="row"> 
                     <div className="column">
-                        <img src="/images/corn.jpg" style={{width: 250}} alt=""/>
-                        <img src="/images/crazy.jpg" style={{width:250}} alt=""/>
-                        <img src="/images/planking2.jpg" style={{width:280}} alt=""/>
-                        <img src="/images/horsemanning1.jpg" style={{width:245}} alt=""/>
-                        <img src="/images/planking.jpg" style={{width:260}} alt=""/>
+                        <img src="/images/horsemanning1.jpg" style={{width:545}} alt=""/>
                     </div>
                 </div>
 

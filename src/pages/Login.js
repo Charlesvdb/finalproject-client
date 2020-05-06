@@ -12,32 +12,35 @@ class Login extends React.Component {
         this.handleFormSubmit = this.handleFormSubmit.bind(this)
 
         this.state = {
-            username: "",
-            password: ""
+            user: { // remove?
+                username: "",
+                password: ""    
+            }
         }
     }
 
     handleChange(event){
         event.preventDefault()
-        let name = event.target.name
-        let value = event.target.value
+        let userCopy = {...this.state.user}
+        userCopy[event.target.name] = event.target.value
         this.setState({
-            [name]: value
+            user: userCopy
         })
     }
 
     handleFormSubmit(event){
         event.preventDefault()
-        login(this.state)
-        .then(() => {
-            console.log("You log in")
-            this.setState({
-                error: null
-            }, () => {
-                console.log("You log in 2")
-                this.props.history.push("/allchallenges")
-            })
-        })
+        login(this.state.user)
+        .then((response) => {
+                console.log("You log in")
+                this.setState({
+                    error: null
+                }, () => {
+                    console.log("You log in 2")
+                    this.props.history.push("/allchallenges")
+                })
+            } 
+        )
         .catch((error) => {
             console.log("You don't log in")
             this.setState({error: error.response && error.response.data})

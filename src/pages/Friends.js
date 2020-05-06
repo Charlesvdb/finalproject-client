@@ -23,7 +23,7 @@ class Friendsfollowers extends React.Component {
 
     // handleFormSubmit(event){
     //     event.preventDefault()
-    //     axios.get(`${process.env.REACT_APP_API}/friends")`
+    //     axios.get(`${process.env.REACT_APP_API_BASE}/friends")`
     //     .then()
 
     // }

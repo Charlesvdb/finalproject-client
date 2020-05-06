@@ -12,24 +12,26 @@ class Signup extends React.Component {
         this.handleFormSubmit = this.handleFormSubmit.bind(this)
 
         this.state = {
+               user: {
                 username: "",    
                 password: ""
+               } 
         }  
     }
 
     handleChange(event) {
         event.preventDefault()
-        let name = event.target.name
-        let value = event.target.value
+        let userCopy = {...this.state.user}
+        userCopy[event.target.name] = event.target.value
         this.setState({
-            [name]: value
+            user: userCopy
         })
     }
 
     handleFormSubmit(event) {
         event.preventDefault();
-        signup(this.state)
-        .then(() => {
+        signup(this.state.user)
+        .then((response) => {
             this.setState({
                 error: null
             }, () => {
