@@ -1,10 +1,16 @@
 import React from 'react'
 import DefaultLayout from "../layout/Default"
 import './About.css'
-
+import { Map, GoogleApiWrapper } from 'google-maps-react';
 
 class About extends React.Component {
     render() {
+
+        const mapStyles = {
+            width: '100%',
+            height: '100%'
+            };
+
         return (
             <DefaultLayout>
                 <h1>About this app</h1>
@@ -24,12 +30,24 @@ class About extends React.Component {
                     
                     <section className="locationmap">
                         <h2>Ironhack Amsterdam campus</h2>
+    
+                        <Map
+                            google={this.props.google}
+                            zoom={14}
+                            style={mapStyles}
+                            initialCenter={{
+                                    lat: 52.370962,
+                                    lng: 4.883245
+                                }}
+                        />
+
                     </section>
                 </div>
-
             </DefaultLayout>
         )
     }
 }
 
-export default About
+export default GoogleApiWrapper({
+    apiKey: "AIzaSyCw1Cu5QmZqsFLWq-D7m12E3Qqjjj13xWY"
+  })(About);
