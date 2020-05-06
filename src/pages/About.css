@@ -1,0 +1,22 @@
+.containerabout{
+    display: flex;
+    flex-direction: column;
+}
+
+.leftbox{
+    float: left;
+    margin-left: 510px;
+    margin-top: 25px;
+}
+
+.rightbox{
+    float: right;
+    margin-right: 370px;
+    line-height: 2.4em;
+    text-align: left;
+    margin-top: 70px;
+}
+
+.locationmap{
+    margin-top:40px
+}
