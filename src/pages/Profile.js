@@ -14,6 +14,7 @@ class Profile extends React.Component {
           file:"",
           error:""
         }
+
         this.formRef = React.createRef()
         this.handleChange=this.handleChange.bind(this)
         this.handleFormSubmit=this.handleFormSubmit.bind(this)

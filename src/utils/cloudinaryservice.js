@@ -5,7 +5,7 @@ const cloudinaryservice = axios.create({
 });
 
 const errorHandler = err => {
-  // console.error(err);
+  console.error(err);
   throw err;
 };
 
