@@ -20,7 +20,7 @@ class Challengedetail extends React.Component {
         debugger
         axios({
             method: "GET",
-            url: `${process.env.REACT_APP_API_BASE}/challengedetail/:id`,
+            url: `${process.env.REACT_APP_API_BASE}challengedetail/:id`,
             withCredentials: true
         })
         .then(response => {

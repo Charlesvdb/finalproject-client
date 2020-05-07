@@ -15,7 +15,7 @@ class Home extends React.Component {
     }
 
     componentDidMount() {
-        axios.get(`${process.env.REACT_APP_API_BASE}/name`)
+        axios.get(`${process.env.REACT_APP_API_BASE}name`)
         .then(response => {
             this.setState({
                 charles: response.data

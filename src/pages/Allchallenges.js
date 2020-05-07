@@ -16,7 +16,7 @@ class Allchallenges extends React.Component {
         debugger
         axios({
             method: "GET",
-            url: `${process.env.REACT_APP_API_BASE}/allchallenges`,
+            url: `${process.env.REACT_APP_API_BASE}allchallenges`,
             withCredentials: true
         })
         .then(response => {

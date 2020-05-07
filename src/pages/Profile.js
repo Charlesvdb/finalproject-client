@@ -33,7 +33,7 @@ class Profile extends React.Component {
         event.preventDefault()
         var formData = new FormData(this.formRef.current)
         axios({
-            url: `${process.env.REACT_APP_API_BASE}/takechallenge`,
+            url: `${process.env.REACT_APP_API_BASE}takechallenge`,
             data: formData,
             headers: {
                 "content-type":"multipart/form-data"
