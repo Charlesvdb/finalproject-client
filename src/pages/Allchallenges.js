@@ -34,7 +34,8 @@ class Allchallenges extends React.Component {
         axios
         .delete(`${process.env.REACT_APP_API_BASE}/allchallenges/${challengeId}`)
         .then(response => {
-            this.props.history.push("/allchallenges")
+            const challenges = this.state.challenges.filter(challenge => challenge._id !== challengeId)
+            this.setState({challenges})
         })
         .catch(err => console.log(err))
     }
