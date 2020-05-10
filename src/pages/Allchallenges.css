@@ -1,0 +1,7 @@
+/* notsure if this works */
+
+.totalbox{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
