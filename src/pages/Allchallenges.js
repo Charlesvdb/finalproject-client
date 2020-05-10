@@ -8,12 +8,13 @@ class Allchallenges extends React.Component {
         super()
 
         this.state = {
-           challenges: [] 
+           challenges: []
         }
+
+        this.onDelete=this.onDelete.bind(this)
     }
 
     componentDidMount(){
-        debugger
         axios({
             method: "GET",
             url: `${process.env.REACT_APP_API_BASE}/allchallenges`,
@@ -29,6 +30,15 @@ class Allchallenges extends React.Component {
         })
     }
 
+    onDelete(challengeId){
+        axios
+        .delete(`${process.env.REACT_APP_API_BASE}/allchallenges/${challengeId}`)
+        .then(response => {
+            this.props.history.push("/allchallenges")
+        })
+        .catch(err => console.log(err))
+    }
+
     render() {
         return (
             <DefaultLayout>
@@ -38,7 +48,23 @@ class Allchallenges extends React.Component {
                     <div className="challengeboxes">
                     
                     {    
-                    this.state.challenges.map(challenge => (<Challengebox key={challenge._id} id={challenge._id} title={challenge.title} description={challenge.description}/>))      
+                    this.state.challenges.map(challenge => 
+                        (
+                            <div className="totalbox" key={challenge._id}>
+
+                                <Challengebox 
+                                    key={challenge._id} 
+                                    id={challenge._id} 
+                                    title={challenge.title} 
+                                    description={challenge.description}
+                                />
+                            
+                                <button onClick={() => this.onDelete(challenge._id)}>
+                                    Delete
+                                </button>
+
+                            </div>
+                        ))                                                                      
                     }
                     
                     </div>
