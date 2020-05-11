@@ -2,6 +2,7 @@ import React from 'react'
 import DefaultLayout from "../layout/Default"
 import Challengebox from '../components/Challengebox'
 import axios from "axios";
+import "./Allchallenges.css"
 
 class Allchallenges extends React.Component {
     constructor() {
@@ -46,28 +47,41 @@ class Allchallenges extends React.Component {
                 <div className="challengeoverviewlist">
                     <h1>All challenges</h1>   
 
+                    <div className="sortingbuttons">
+                        <button className="sorttitle">
+                            Sort based on TITLE
+                        </button>
+
+                        <button className="sortdescription">
+                            Sort based on DESCRIPTION
+                        </button>
+
+                        <button className="sortdaredevils">
+                            Sort based on DAREDEVILS
+                        </button>
+                    </div>
+
                     <div className="challengeboxes">
-                    
-                    {    
-                    this.state.challenges.map(challenge => 
-                        (
-                            <div className="totalbox" key={challenge._id}>
+                        {    
+                        this.state.challenges.map(challenge => 
+                            (
 
-                                <Challengebox 
-                                    key={challenge._id} 
-                                    id={challenge._id} 
-                                    title={challenge.title} 
-                                    description={challenge.description}
-                                />
-                            
-                                <button onClick={() => this.onDelete(challenge._id)}>
-                                    Delete
-                                </button>
+                                <div className="totalbox" key={challenge._id}>
 
-                            </div>
-                        ))                                                                      
-                    }
-                    
+                                    <Challengebox 
+                                        key={challenge._id} 
+                                        id={challenge._id} 
+                                        title={challenge.title} 
+                                        description={challenge.description}
+                                    />
+                                
+                                    <button className="deletebutton" onClick={() => this.onDelete(challenge._id)}>
+                                        Delete
+                                    </button>
+
+                                </div>
+                            ))                                                                      
+                        }
                     </div>
 
                 </div>    
