@@ -13,8 +13,8 @@ class Responsechallenge extends React.Component {
     render() {
         return (
                 <div className="responsesectionbox">
-                    <h2>Name Daredevil</h2>
-                    <img className="imagedaredevil" src="/images/CVDB.png" alt="" ></img>
+                    <h2>Name</h2>
+                    <img className="imagedaredevil" src="/images/charles.jpg" alt="" ></img>
                     <h3>"Picture caption #streetcredit"</h3>
                 </div>
                )
