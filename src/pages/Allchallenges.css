@@ -4,14 +4,30 @@
     align-items: center;
 }
 
-.sortingbuttons{
+.headers{
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap; 
+	flex-wrap: nowrap;
+}
+
+.searchbox{
+	width: 485px;
+    height: 30px;
+    border: 1.5px solid red;
+	border-radius: 4px;
+	margin-left: 5px;
+	margin-top: 10px;
+}
+
+.resultsbox{
+	width: 100px;
+    height: 30.5px;
+	border: 1.5px solid red;
+	margin-left: 5px;
+	margin-top: 11px;
 }
 
 .sorttitle{
-    margin-left: 5px;
     width: 220px;
     height: 35px;
     margin-top: 10px;

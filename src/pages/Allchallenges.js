@@ -9,10 +9,13 @@ class Allchallenges extends React.Component {
         super()
 
         this.state = {
-           challenges: []
+           challenges: [],
         }
 
         this.onDelete=this.onDelete.bind(this)
+        this.sortByTitle=this.sortByTitle.bind(this)
+        this.sortByDescription=this.sortByDescription.bind(this)
+        this.searchChallenges=this.searchChallenges.bind(this)
     }
 
     componentDidMount(){
@@ -41,31 +44,62 @@ class Allchallenges extends React.Component {
         .catch(err => console.log(err))
     }
 
-    render() {
+    sortByTitle() {
+        let challengesSortTitle = this.state.challenges.sort((a,b) => {
+            return a.title > b.title ? 1 : -1
+        })
+        this.setState({
+            challenges:challengesSortTitle
+        })
+    }
+
+    sortByDescription() {
+        let challengesSortDescription = this.state.challenges.sort((a,b) => {
+            return a.description > b.description ? 1 : -1
+        })
+        this.setState({
+            challenges:challengesSortDescription
+        })
+    }
+
+    searchChallenges(e){ // eslint-disable-next-line
+        let challengesSearch = this.state.challenges.filter(challenge => { 
+            if(challenge.title){
+                if(challenge.title.toLowerCase().includes(e.target.value.toLowerCase())){
+                    return true 
+                }   
+            }
+        })
+        this.setState({
+            challenges:challengesSearch
+        })
+    }
+
+    render(){
         return (
             <DefaultLayout>
                 <div className="challengeoverviewlist">
                     <h1>All challenges</h1>   
 
-                    <div className="sortingbuttons">
-                        <button className="sorttitle">
+                    <div className="headers">
+                        <button onClick={this.sortByTitle} className="sorttitle">
                             Sort based on TITLE
                         </button>
 
-                        <button className="sortdescription">
+                        <button onClick={this.sortByDescription} className="sortdescription">
                             Sort based on DESCRIPTION
                         </button>
 
-                        <button className="sortdaredevils">
-                            Sort based on DAREDEVILS
-                        </button>
+                        <input className="searchbox" type="text" placeholder="Search for a challenge title here..." onChange={this.searchChallenges} />
+
+                        <p className="resultsbox">0 challenges</p>
+
                     </div>
 
                     <div className="challengeboxes">
                         {    
                         this.state.challenges.map(challenge => 
                             (
-
                                 <div className="totalbox" key={challenge._id}>
 
                                     <Challengebox 
