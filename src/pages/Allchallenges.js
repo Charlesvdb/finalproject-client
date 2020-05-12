@@ -9,7 +9,7 @@ class Allchallenges extends React.Component {
         super()
 
         this.state = {
-           challenges: [],
+           challenges: []
         }
 
         this.onDelete=this.onDelete.bind(this)
@@ -75,6 +75,10 @@ class Allchallenges extends React.Component {
         })
     }
 
+    challengestotal(){
+        return `${this.state.challenges.length}`
+    }
+
     render(){
         return (
             <DefaultLayout>
@@ -90,10 +94,13 @@ class Allchallenges extends React.Component {
                             Sort based on DESCRIPTION
                         </button>
 
+                        <button onClick={this.sortByDescription} className="sortdescription">
+                            Sort based on DAREDEVILS
+                        </button>
+
                         <input className="searchbox" type="text" placeholder="Search for a challenge title here..." onChange={this.searchChallenges} />
 
-                        <p className="resultsbox">0 challenges</p>
-
+                        <p className="challengescounterbox">{this.challengestotal()} challenges</p>
                     </div>
 
                     <div className="challengeboxes">

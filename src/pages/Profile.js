@@ -57,7 +57,13 @@ class Profile extends React.Component {
             <DefaultLayout>
                 <h1>Tell us something more about yourself!</h1>
 
-                <form className="formercontainer" onSubmit={this.handleFormSubmit}>
+                <div className="settingscontainer">
+                    <img className="imagedaredevilspic" src="/images/profileimage.png" alt="picturesetting" />
+                    <p>Username</p>
+                    <p>Location</p>
+                </div>
+
+                <form className="formcontainerprofile" onSubmit={this.handleFormSubmit}>
                     <div className="userpart">
                         <label className="userlabel" htmlFor="username">Username:</label><br></br>
                         <input className="userform" type="text" name="username" value={this.state.username} placeholder="Please edit your username here!" onChange={(e) => this.handleChange(e)}></input>
