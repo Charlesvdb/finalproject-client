@@ -67,6 +67,7 @@ class Challengedetail extends React.Component {
                             <TakeChallenge/>
                         </div>
                     </div>
+                    
                     <div className="responsechallenges">
                         <Responsechallenge/>
                         <Responsechallenge/>

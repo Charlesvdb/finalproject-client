@@ -8,6 +8,10 @@
 
 .challengedetailpage{
     margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .responsechallenges{
@@ -15,5 +19,4 @@
     flex-direction: row;
     margin-left: 100px;
     margin-right: 100px;
-
 }
