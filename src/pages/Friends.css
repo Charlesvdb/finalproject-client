@@ -27,3 +27,12 @@
     text-shadow:0px 1px 0px #b23e35;
     margin-top: 20px;
 }
+
+.friendsboxes{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-top: 50px;
+	margin-left: 30px;
+	margin-right: 30px;
+}
