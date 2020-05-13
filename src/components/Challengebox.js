@@ -1,6 +1,6 @@
 import React from "react"
 import './Challengebox.css';
-import {Link} from "react-router-dom"
+// import {Link} from "react-router-dom"
 
 class Challengebox extends React.Component {
     constructor() {
@@ -11,10 +11,14 @@ class Challengebox extends React.Component {
         }
     }
 
+    // onDetail(challengeId){
+
+    // }
+
     render() {
         return (
-                <Link to={`/challengedetail/${this.props.id}`}>
-                    <div className="challengebox">    
+                // <Link to={`/challengedetail/${this.props.id}`}>
+                    <div className="challengebox" onClick={() => this.onDetail(this.props.id)}>    
                             <img className="challengerpic" src="/images/charles.jpg" alt=""></img>
                             
                             <section className="boxchallenge">
@@ -27,7 +31,7 @@ class Challengebox extends React.Component {
                                 <p className="responsetext">Daredevils</p>
                             </div>
                     </div>   
-                </Link>
+                // </Link>
         )
     }
 }

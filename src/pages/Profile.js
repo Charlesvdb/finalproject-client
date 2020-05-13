@@ -15,7 +15,7 @@ class Profile extends React.Component {
           error:""
         }
 
-        this.formRef = React.createRef()
+        // this.formRef = React.createRef()
         this.handleChange=this.handleChange.bind(this)
         this.handleFormSubmit=this.handleFormSubmit.bind(this)
     }
@@ -30,20 +30,18 @@ class Profile extends React.Component {
     }
 
     handleFormSubmit(event){
-        debugger
         event.preventDefault()
         var formData = new FormData(this.formRef.current)
         axios({
-            url: `${process.env.REACT_APP_API_BASE}takechallenge`,
+            url: `${process.env.REACT_APP_API_BASE}profile`,
             data: formData,
             headers: {
                 "content-type":"multipart/form-data"
             },
-            method: "POST" 
+            method: "PUT" 
         })
         .then((response)=> {
-            debugger
-            this.props.history.push("/profile")
+            this.props.history.push("/allchallenges")
         })
         .catch((error)=> {
             this.setState({
@@ -59,9 +57,10 @@ class Profile extends React.Component {
 
                 <div className="settingscontainer">
                     <img className="imagedaredevilspic" src="/images/profileimage.png" alt="picturesetting" />
-                    <p>Username</p>
-                    <p>Location</p>
-                </div>
+
+                    <p>{this.state.username}</p>
+                    <p>{this.state.location}</p>
+                </div>    
 
                 <form className="formcontainerprofile" onSubmit={this.handleFormSubmit}>
                     <div className="userpart">
@@ -86,7 +85,6 @@ class Profile extends React.Component {
 
                     <button className="editbutton">Edit your personal settings!</button>
                 </form>
-
             </DefaultLayout>
         )
     }

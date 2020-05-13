@@ -35,24 +35,6 @@ class Challengedetail extends React.Component {
         })
     }
 
-    // componentDidMount(){
-    //     axios({
-    //         method: "GET",
-    //         url: `${process.env.REACT_APP_API}/challengedetail/:id`,
-    //         withCredentials: true
-    //     })
-    //     .then(response => {
-    //         console.log(response)
-    //         let responseslist = response.data
-    //         this.setState({
-    //             responses: responseslist
-    //         })
-    //     })
-    //     .catch(error => {
-    //         console.log("An error has happened when retrieving all responses: ", error)
-    //     })
-    // }
-
     render() {
         return (
             <DefaultLayout>
