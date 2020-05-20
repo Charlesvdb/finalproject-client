@@ -16,3 +16,8 @@ a {
 .logostreet{
     width: 200px;
 }
+
+.welcomemessage{
+    color:black;
+    font-weight: bolder;
+}

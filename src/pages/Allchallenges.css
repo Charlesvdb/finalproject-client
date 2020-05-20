@@ -114,7 +114,7 @@
 	border-radius:6px;
 	border:1px solid #d83526;
 	display:inline-block;
-	cursor:pointer;
+	cursor: pointer;
 	color:#ffffff;
 	font-family:Arial;
 	font-size:18px;
@@ -123,3 +123,44 @@
     text-shadow:0px 1px 0px #b23e35;
 }
 
+.likedislikesbox{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border: 1.5px solid black;
+	margin-top: 10px;
+	margin-left: 10px;
+	width: 130px;
+	height:140px;
+}
+
+.likecontainer,
+.dislikecontainer,
+.satisfactioncontainer{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+.likestat,
+.dislikestat,
+.satisfactionstat{
+	margin-left: 8px
+}
+
+.likestat{
+	color: green;
+	font-weight: bolder;
+}
+
+.dislikestat{
+	color: red;
+	font-weight: bolder;
+}
+
+.satisfactionstat{
+	color: orange;
+	font-weight: bolder;
+}

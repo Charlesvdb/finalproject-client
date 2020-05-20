@@ -62,7 +62,7 @@ class Login extends React.Component {
 
                     <div className="passwordpart">
                         <label className="passwordlabel">Password:</label><br></br>
-                        <input className="passwordform" type="text" name="password" value={this.state.password} placeholder="We bet you forgot your password again..." onChange={(event) => this.handleChange(event)}></input>
+                        <input className="passwordform" type="password" name="password" value={this.state.password} placeholder="We bet you forgot your password again..." onChange={(event) => this.handleChange(event)}></input>
                     </div>
                     <button className="loginbutton">Log in</button>
                 </form>
