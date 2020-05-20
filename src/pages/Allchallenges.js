@@ -3,6 +3,10 @@ import DefaultLayout from "../layout/Default"
 import Challengebox from '../components/Challengebox'
 import axios from "axios";
 import "./Allchallenges.css"
+import { faThumbsUp } from "@fortawesome/free-solid-svg-icons";
+import { faThumbsDown } from "@fortawesome/free-solid-svg-icons";
+import { faBalanceScale } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class Allchallenges extends React.Component {
     constructor() {
@@ -109,6 +113,23 @@ class Allchallenges extends React.Component {
                             (
                                 <div className="totalbox" key={challenge._id}>
 
+                                    <div className="likedislikesbox">
+                                        <div className="likecontainer">
+                                            <div><FontAwesomeIcon icon={faThumbsUp}/></div>
+                                            <p className="likestat">Like</p>
+                                        </div>
+                                        
+                                        <div className="dislikecontainer">
+                                            <div><FontAwesomeIcon icon={faThumbsDown}/></div>
+                                            <p className="dislikestat">Dislike</p>
+                                        </div>
+
+                                        <div className="satisfactioncontainer">
+                                            <div><FontAwesomeIcon icon={faBalanceScale}/></div>
+                                            <p className="satisfactionstat">Satisf %</p>
+                                        </div>
+                                    </div>
+
                                     <Challengebox 
                                         key={challenge._id} 
                                         id={challenge._id} 
@@ -116,7 +137,7 @@ class Allchallenges extends React.Component {
                                         description={challenge.description}
                                     />
                                 
-                                    <button className="deletebutton" onClick={() => this.onDelete(challenge._id)}>
+                                    <button className="deletebutton">
                                         Delete
                                     </button>
 

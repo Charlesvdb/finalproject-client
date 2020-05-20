@@ -40,14 +40,17 @@ export const login = (user) => {
 //setUser
 export const setUser = (user) => {
     window.localStorage.setItem("user", JSON.stringify(user))
+    console.log("user has been SET out of local storage")
 }
 
 //getUser
-export const getUser = () => {
+export const getUser = (user) => {
+    console.log("user has been GET out of local storage (just before)")
     return JSON.parse(window.localStorage.getItem("user"))
 }
 
 //logout
-export const logout = () =>{
+export const logout = (user) =>{
     window.localStorage.removeItem("user")
+    console.log("user has been logged out of local storage")
 }
