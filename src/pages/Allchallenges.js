@@ -13,13 +13,16 @@ class Allchallenges extends React.Component {
         super()
 
         this.state = {
-           challenges: []
+           challenges: [],
+           searchChallenges: []
         }
 
         this.onDelete=this.onDelete.bind(this)
         this.sortByTitle=this.sortByTitle.bind(this)
         this.sortByDescription=this.sortByDescription.bind(this)
         this.searchChallenges=this.searchChallenges.bind(this)
+        this.challengestotal=this.challengestotal.bind(this)
+        this.handleLike=this.handleLike.bind(this)
     }
 
     componentDidMount(){
@@ -31,7 +34,7 @@ class Allchallenges extends React.Component {
         .then(response => {
             console.log(response)
             let challengeslist = response.data;
-            this.setState({challenges: challengeslist})
+            this.setState({challenges: challengeslist, searchChallenges:challengeslist})
         })
         .catch(error => {
             console.log("You've made an error charles: ",error)
@@ -42,27 +45,27 @@ class Allchallenges extends React.Component {
         axios
         .delete(`${process.env.REACT_APP_API_BASE}/allchallenges/${challengeId}`)
         .then(response => {
-            const challenges = this.state.challenges.filter(challenge => challenge._id !== challengeId)
-            this.setState({challenges})
+            const remainingChallenges = this.state.searchChallenges.filter(challenge => challenge._id !== challengeId)
+            this.setState({searchChallenges:remainingChallenges})
         })
         .catch(err => console.log(err))
     }
 
     sortByTitle() {
-        let challengesSortTitle = this.state.challenges.sort((a,b) => {
+        let challengesSortTitle = this.state.searchChallenges.sort((a,b) => {
             return a.title > b.title ? 1 : -1
         })
         this.setState({
-            challenges:challengesSortTitle
+            searchChallenges:challengesSortTitle
         })
     }
 
     sortByDescription() {
-        let challengesSortDescription = this.state.challenges.sort((a,b) => {
+        let challengesSortDescription = this.state.searchChallenges.sort((a,b) => {
             return a.description > b.description ? 1 : -1
         })
         this.setState({
-            challenges:challengesSortDescription
+            searchChallenges:challengesSortDescription
         })
     }
 
@@ -75,13 +78,30 @@ class Allchallenges extends React.Component {
             }
         })
         this.setState({
-            challenges:challengesSearch
+            searchChallenges:challengesSearch
         })
     }
 
     challengestotal(){
-        return `${this.state.challenges.length}`
+        return `${this.state.searchChallenges.length}`
     }
+
+    handleLike(challengeId){
+        const likedchallenge = this.state.challenges.find(challenge => challenge._id === challengeId)      
+        likedchallenge.likes++
+        this.setState({
+                
+        })
+    }
+
+    handleDislike(challengeId){
+        const likedchallenge = this.state.challenges.find(challenge => challenge._id === challengeId)      
+        likedchallenge.dislikes++
+        this.setState({
+                
+        })
+    }
+
 
     render(){
         return (
@@ -109,24 +129,24 @@ class Allchallenges extends React.Component {
 
                     <div className="challengeboxes">
                         {    
-                        this.state.challenges.map(challenge => 
+                        this.state.searchChallenges.map(challenge => 
                             (
                                 <div className="totalbox" key={challenge._id}>
 
                                     <div className="likedislikesbox">
                                         <div className="likecontainer">
-                                            <div><FontAwesomeIcon icon={faThumbsUp}/></div>
-                                            <p className="likestat">Like</p>
+                                            <div className="leftalignment"><FontAwesomeIcon icon={faThumbsUp} onClick={()=>this.handleLike(challenge._id)}/></div>
+                                                <p className="likestat">{challenge.likes}</p>
                                         </div>
                                         
                                         <div className="dislikecontainer">
-                                            <div><FontAwesomeIcon icon={faThumbsDown}/></div>
-                                            <p className="dislikestat">Dislike</p>
+                                            <div className="leftalignment"><FontAwesomeIcon icon={faThumbsDown} onClick={()=>this.handleDislike(challenge._id)}/></div>
+                                            <p className="dislikestat">{challenge.dislikes}</p>
                                         </div>
 
                                         <div className="satisfactioncontainer">
-                                            <div><FontAwesomeIcon icon={faBalanceScale}/></div>
-                                            <p className="satisfactionstat">Satisf %</p>
+                                            <div className="leftalignment"><FontAwesomeIcon icon={faBalanceScale}/></div>
+                                            <p className="satisfactionstat">{(challenge.likes/(challenge.dislikes + challenge.likes)*100).toFixed(0)}%</p>
                                         </div>
                                     </div>
 
@@ -137,7 +157,7 @@ class Allchallenges extends React.Component {
                                         description={challenge.description}
                                     />
                                 
-                                    <button className="deletebutton">
+                                    <button className="deletebutton" onClick={()=> this.onDelete(challenge._id)}>
                                         Delete
                                     </button>
 
