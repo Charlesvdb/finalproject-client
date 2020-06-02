@@ -8,7 +8,8 @@ class Friendsfollowers extends React.Component {
     constructor() {
         super()
         this.state = {
-            friends: []       
+            friends: [],
+            searchFriends: []       
         }
         
         this.searchFriends=this.searchFriends.bind(this)
@@ -24,7 +25,8 @@ class Friendsfollowers extends React.Component {
             console.log(response)
             let friendslist = response.data
             this.setState({
-                friends:friendslist
+                friends:friendslist,
+                searchFriends: friendslist
             })
         })
         .catch(error =>{
@@ -41,7 +43,7 @@ class Friendsfollowers extends React.Component {
             }
         })
         this.setState({
-            friends:friendsearched
+            searchFriends:friendsearched
         })
     }
 
@@ -59,7 +61,7 @@ class Friendsfollowers extends React.Component {
 
                 <div className="friendsboxes" >
                     {
-                        this.state.friends.map(friend =>
+                        this.state.searchFriends.map(friend =>
                             <div key={friend._id}>
                                 <Frienddetail 
                                     key={friend._id}

@@ -127,7 +127,7 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	align-items: center;
+	align-items: flex-start;
 	border: 1.5px solid black;
 	margin-top: 10px;
 	margin-left: 10px;
@@ -163,4 +163,8 @@
 .satisfactionstat{
 	color: orange;
 	font-weight: bolder;
+}
+
+.leftalignment{
+	padding-left: 38px
 }
