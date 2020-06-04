@@ -165,7 +165,6 @@ class Allchallenges extends React.Component {
                             ))                                                                      
                         }
                     </div>
-
                 </div>    
             </DefaultLayout>
         )
