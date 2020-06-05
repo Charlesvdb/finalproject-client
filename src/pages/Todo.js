@@ -10,10 +10,27 @@ class Todo extends React.Component {
         super()
 
         this.state = {
-            title:""
+            title:"",
+            todos: []
         }
         this.handleChange=this.handleChange.bind(this)
         this.handleSubmit=this.handleSubmit.bind(this)
+    }
+
+    componentDidMount(){
+        axios({
+            method: "GET",
+            url: `${process.env.REACT_APP_API_BASE}/todo`,
+            withCredentials: true
+        })
+        .then(response => {
+            console.log(response)
+            let todolist = response.data;
+            this.setState({todos:todolist})
+        })
+        .catch(error => {
+            console.log("You've made an error when getting the todos charles: ",error)
+        })
     }
 
     handleChange(event){
@@ -30,7 +47,7 @@ class Todo extends React.Component {
         axios({
             method: "POST",
             url: `${process.env.REACT_APP_API_BASE}/todo`,
-            data: qs.stringify(this.state),
+            data: qs.stringify(this.state.title),
             headers: {"content-type": "application/x-www-form-urlencoded"},
             withCredentials: true
         })
@@ -61,11 +78,14 @@ class Todo extends React.Component {
                     </div>
                 </form> 
                 <div>
-                    <Todoitem/>
-                    <Todoitem/>
-                    <Todoitem/>
-                    <Todoitem/>
-                    <Todoitem/>
+
+                {
+                    this.state.todos.map(element => (
+                        <Todoitem/>
+                    ))
+                    
+                }
+                
                 </div>
                 </DefaultLayout>
             </div>
