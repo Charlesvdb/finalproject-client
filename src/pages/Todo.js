@@ -11,7 +11,7 @@ class Todo extends React.Component {
 
         this.state = {
             title:"",
-            todos: []
+            todos:[]
         }
         this.handleChange=this.handleChange.bind(this)
         this.handleSubmit=this.handleSubmit.bind(this)
@@ -80,11 +80,11 @@ class Todo extends React.Component {
                 <div>
 
                 {
-                    this.state.todos.map(element => (
-                        <Todoitem/>
+                    this.state.todos.map((element,i) => (
+                        <Todoitem key={i}/>
                     ))
-                    
                 }
+                <Todoitem/>
                 
                 </div>
                 </DefaultLayout>
