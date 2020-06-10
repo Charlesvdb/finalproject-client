@@ -59,6 +59,18 @@ class Todo extends React.Component {
         })
     }
 
+    handleDelete(todoId){
+        axios
+        .delete(`${process.env.REACT_APP_API_BASE}/todo/${todoId}`)
+        .then(response => {
+            const remainingTodos = this.state.todos.filter(element => element._id !== todoId)
+            this.setState({
+                todos: remainingTodos
+            })
+        })
+        .catch(err => console.log(err))
+    }
+
     render() {
         return (
             <div>
@@ -81,10 +93,14 @@ class Todo extends React.Component {
 
                 {
                     this.state.todos.map((element,i) => (
+                     <div className="todosoverviewlister">
                         <Todoitem key={i}/>
+
+                        {/* <button className="todoedit">Edit</button> */}
+                        <button className="tododelete" onClick={()=> this.handleDelete(element._id)}>Delete</button>
+                     </div>
                     ))
                 }
-                <Todoitem/>
                 
                 </div>
                 </DefaultLayout>

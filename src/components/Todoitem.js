@@ -14,8 +14,6 @@ class Todoitem extends React.Component {
         return (
             <div className="todoitemboxcontainer">
                 <p className="todoitem">todoitem</p>
-                <button className="todoedit">Edit</button>
-                <button className="tododelete">Delete</button>
             </div>
         )
     }
