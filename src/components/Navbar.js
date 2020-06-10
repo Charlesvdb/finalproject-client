@@ -40,6 +40,7 @@ class Navbar extends React.Component {
                 <Link to="/profile"><strong>Profile settings</strong></Link>
                 <Link to="/friends"><strong>Friends</strong></Link>
                 <Link to="/about"><strong>About</strong></Link>
+                <Link to="/todo"><strong>To-do</strong></Link>
                 <Link to="/" onClick={this.handleLogout}><strong>Log out</strong></Link>
                 <p className="welcomemessage">{this.handleUser()} </p>
                 {/* <p className="welcomemessage">Welcome {this.handleUserLocation()}</p> */}

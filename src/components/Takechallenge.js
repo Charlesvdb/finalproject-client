@@ -38,7 +38,6 @@ class Takechallenge extends React.Component {
             method: "POST" 
         })
         .then((response)=> {
-            debugger
             this.props.history.push(`/challengedetail/${response.data._id}`)
         })
         .catch((error)=> {
