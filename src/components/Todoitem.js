@@ -13,7 +13,7 @@ class Todoitem extends React.Component {
     render() {
         return (
             <div className="todoitemboxcontainer">
-                <p className="todoitem">todoitem</p>
+                <p className="todoitem">{this.props.title}</p>
             </div>
         )
     }

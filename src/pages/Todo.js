@@ -23,7 +23,7 @@ class Todo extends React.Component {
             url: `${process.env.REACT_APP_API_BASE}/todo`,
             withCredentials: true
         })
-        .then(response => {
+            .then(response => {
             console.log(response)
             let todolist = response.data;
             this.setState({todos:todolist})
@@ -40,19 +40,24 @@ class Todo extends React.Component {
         this.setState({
             [name]:value
         })
+        console.log(this.state.title)
     }
 
     handleSubmit(event){
         event.preventDefault()
+        const newTodo = {title: this.state.title}
         axios({
             method: "POST",
             url: `${process.env.REACT_APP_API_BASE}/todo`,
-            data: qs.stringify(this.state.title),
+            data: qs.stringify(newTodo),
             headers: {"content-type": "application/x-www-form-urlencoded"},
             withCredentials: true
         })
         .then((response) => {
             console.log(response)
+            this.setState(prevState => ({
+                todos: [...prevState.todos,newTodo]
+            }))
         })
         .catch((error) => {
             console.log(error.response)
@@ -77,32 +82,28 @@ class Todo extends React.Component {
                 <DefaultLayout>
                 <h1>To-do things for this app</h1>
                 <h2 className="todotitle">Add your to-do here, Charles!</h2>
-                <form className="todocontainer"> 
+                <form className="todocontainer" onSubmit={this.handleSubmit}> 
                     <div className="inputbuttonandfield">    
                         <div className="inputcontainer">
-                            <div className="captionpart" onSubmit={this.handleSubmit}>
-                                <label className="captionlabel" htmlFor="title">Add to-do:</label><br></br>
+                            <div className="captionpart">
+                                <label className="captionlabel" htmlFor="title"></label><br></br>
                                 <input className="captionform" type="text" name="title" value={this.state.title} placeholder="Type your to-do here!" onChange={(e) => this.handleChange(e)}></input>
+                                <button className="shootbutton">Add!</button>
                             </div>
-                        </div>
-                    
-                        <button className="shootbutton">Add!</button>
+                        </div> 
                     </div>
                 </form> 
-                <div>
 
                 {
-                    this.state.todos.map((element,i) => (
-                     <div className="todosoverviewlister">
-                        <Todoitem key={i}/>
+                    this.state.todos.map(element=> (
+                     <div className="todosoverviewlister" key={element._id}>
+                        <Todoitem id={element._id} title={element.title} />
 
-                        {/* <button className="todoedit">Edit</button> */}
                         <button className="tododelete" onClick={()=> this.handleDelete(element._id)}>Delete</button>
                      </div>
                     ))
                 }
                 
-                </div>
                 </DefaultLayout>
             </div>
         )
