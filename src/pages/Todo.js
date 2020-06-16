@@ -45,16 +45,19 @@ class Todo extends React.Component {
 
     handleSubmit(event){
         event.preventDefault()
+        const newTodo = {title: this.state.title}
         axios({
             method: "POST",
             url: `${process.env.REACT_APP_API_BASE}/todo`,
-            data: qs.stringify({title: this.state.title}),
+            data: qs.stringify(newTodo),
             headers: {"content-type": "application/x-www-form-urlencoded"},
             withCredentials: true
         })
         .then((response) => {
             console.log(response)
-            // this.props.history.push(`/todo`)
+            this.setState(prevState => ({
+                todos: [...prevState.todos,newTodo]
+            }))
         })
         .catch((error) => {
             console.log(error.response)
