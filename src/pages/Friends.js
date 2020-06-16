@@ -3,6 +3,7 @@ import DefaultLayout from "../layout/Default"
 import './Friends.css'
 import Axios from 'axios'
 import Frienddetail from '../components/Frienddetail'
+import { getUser } from '../utils/auth'
 
 class Friendsfollowers extends React.Component {
     constructor() {
@@ -15,7 +16,7 @@ class Friendsfollowers extends React.Component {
         this.searchFriends=this.searchFriends.bind(this)
     }
 
-    componentDidMount(){
+    componentDidMount(){ 
         Axios({
             method: "GET",
             url: `${process.env.REACT_APP_API_BASE}/friends`,
@@ -23,10 +24,17 @@ class Friendsfollowers extends React.Component {
         })
         .then(response =>{
             console.log(response)
-            let friendslist = response.data
+            let friendslist = response.data // eslint-disable-next-line
+            let friendslistupdate = friendslist.filter(friend => {
+                if(friend.username){
+                    if(friend.username !== getUser().username){
+                        return true
+                    }
+                }
+            })
             this.setState({
-                friends:friendslist,
-                searchFriends: friendslist
+                friends:friendslistupdate,
+                searchFriends: friendslistupdate
             })
         })
         .catch(error =>{
@@ -35,6 +43,7 @@ class Friendsfollowers extends React.Component {
     }
 
     searchFriends(e){ // eslint-disable-next-line
+        console.log(getUser)
         let friendsearched = this.state.friends.filter(friend => {
             if(friend.username){
                 if(friend.username.toLowerCase().includes(e.target.value.toLowerCase())){
