@@ -7,6 +7,7 @@ import { faThumbsUp } from "@fortawesome/free-solid-svg-icons";
 import { faThumbsDown } from "@fortawesome/free-solid-svg-icons";
 import { faBalanceScale } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {Link} from "react-router-dom"
 
 class Allchallenges extends React.Component {
     constructor() {
@@ -150,17 +151,18 @@ class Allchallenges extends React.Component {
                                         </div>
                                     </div>
 
-                                    <Challengebox 
-                                        key={challenge._id} 
-                                        id={challenge._id} 
-                                        title={challenge.title} 
-                                        description={challenge.description}
-                                    />
+                                    <Link to={`/challengedetail/${challenge._id}`}>
+                                        <Challengebox 
+                                            key={challenge._id} 
+                                            id={challenge._id} 
+                                            title={challenge.title} 
+                                            description={challenge.description}
+                                        />
+                                    </Link>
                                 
                                     <button className="deletebutton" onClick={()=> this.onDelete(challenge._id)}>
                                         Delete
                                     </button>
-
                                 </div>
                             ))                                                                      
                         }

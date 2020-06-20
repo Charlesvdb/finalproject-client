@@ -24,7 +24,7 @@ function App() {
           <Route path="/allchallenges" component={Allchallenges} />
           <Route path="/friends" component={Friends} />
           <Route path="/startchallenge" component={Startchallenge} />
-          <Route path="/challengedetail" component={Challengedetail} />
+          <Route path="/challengedetail/:id" component={Challengedetail}/>
           <Route path="/about" component={About} />
           <Route path="/todo" component={Todo} />
     </Switch>

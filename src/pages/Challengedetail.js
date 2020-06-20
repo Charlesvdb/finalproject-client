@@ -17,10 +17,10 @@ class Challengedetail extends React.Component {
     }
 
     componentDidMount(){
-        debugger
+        const challengeId = this.props.match.params.id
         axios({
             method: "GET",
-            url: `${process.env.REACT_APP_API_BASE}challengedetail/:id`,
+            url: `${process.env.REACT_APP_API_BASE}/challengedetail/${challengeId}`,
             withCredentials: true
         })
         .then(response => {
@@ -51,6 +51,7 @@ class Challengedetail extends React.Component {
                     </div>
                     
                     <div className="responsechallenges">
+                        <Responsechallenge/>
                         <Responsechallenge/>
                         <Responsechallenge/>
                     </div>
