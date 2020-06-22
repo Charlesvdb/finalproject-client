@@ -1,6 +1,7 @@
 import React from 'react'
 import DefaultLayout from "../layout/Default"
 import Challengebox from '../components/Challengebox'
+import Pagination from "../components/Pagination"
 import axios from "axios";
 import "./Allchallenges.css"
 import { faThumbsUp } from "@fortawesome/free-solid-svg-icons";
@@ -15,7 +16,9 @@ class Allchallenges extends React.Component {
 
         this.state = {
            challenges: [],
-           searchChallenges: []
+           searchChallenges: [],
+           pagepick: 4,
+           page: 1
         }
 
         this.onDelete=this.onDelete.bind(this)
@@ -24,6 +27,9 @@ class Allchallenges extends React.Component {
         this.searchChallenges=this.searchChallenges.bind(this)
         this.challengestotal=this.challengestotal.bind(this)
         this.handleLike=this.handleLike.bind(this)
+        // this.pageUp=this.pageUp.bind(this)
+        // this.pageDown=this.pageDown.bind(this)
+        // this.getAmountNumber = this.getAmountNumber.bind(this);
     }
 
     componentDidMount(){
@@ -103,6 +109,30 @@ class Allchallenges extends React.Component {
         })
     }
 
+    getAmountNumber(e){
+        Array.from(e.target.parentElement.children).forEach((a) => a.className = "")
+        e.target.className = "active"
+        this.setState({
+            ...this.state,
+            page: 1,
+            pagepick: parseInt(e.target.textContent)
+        })
+    }    
+
+    pageUp(){
+        this.setState({
+            ...this.state,
+            page: (this.state.challenges.length - (this.state.page * this.state.pagepick) > 0) ? this.state.page + 1 : this.state.page
+        })
+    }
+
+    pageDown(){
+        this.setState({
+            ...this.setState,
+            page: ((this.state.page-1) < 1) ? 1 : (this.state.page - 1)
+        })
+    }
+
 
     render(){
         return (
@@ -167,6 +197,10 @@ class Allchallenges extends React.Component {
                             ))                                                                      
                         }
                     </div>
+                
+                    <div className="paginationresult">
+                        <Pagination pageUp={this.pageUp} pageDown={this.pageDown} getAmountNumber={this.getAmountNumber} />
+                    </div>    
                 </div>    
             </DefaultLayout>
         )

@@ -24,7 +24,6 @@ class Challengedetail extends React.Component {
             withCredentials: true
         })
         .then(response => {
-            console.log(response.data)
             this.setState({
                 title: response.data.title,
                 description: response.data.description
