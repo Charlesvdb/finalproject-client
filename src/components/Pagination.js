@@ -8,8 +8,8 @@ class Pagination extends React.Component {
       return (
         <div className="row">
             <div className="pagechange">
-                <a href="#" className="pageprev" onClick={(e) => { e.preventDefault(); pageDown();}}>❮Go to previous page</a>
-                <a href="#" className="pagenext" onClick={(e) => { e.preventDefault(); pageUp();}}>Go to next page❯</a>
+                <a href="#" className="pageprev" onClick={(e) => {e.preventDefault(); pageDown();}}>❮Go to previous page</a>
+                <a href="#" className="pagenext" onClick={(e) => {e.preventDefault(); pageUp();}}>Go to next page❯</a>
             </div>
 
             <div className="pagenumbers pagination">
@@ -19,7 +19,6 @@ class Pagination extends React.Component {
             </div>
         </div>
       )
-
     }
 }
 
