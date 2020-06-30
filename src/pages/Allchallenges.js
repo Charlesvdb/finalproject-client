@@ -186,7 +186,7 @@ class Allchallenges extends React.Component {
 
                                         <div className="satisfactioncontainer">
                                             <div className="leftalignment"><FontAwesomeIcon icon={faBalanceScale}/></div>
-                                            <p className="satisfactionstat">{(challenge.likes/(challenge.dislikes + challenge.likes)*100).toFixed(0)}%</p>
+                                            <p className="satisfactionstat">{(challenge.likes/(challenge.dislikes + challenge.likes)*100).toFixed(0) === "NaN" ? 0 : (challenge.likes/(challenge.dislikes + challenge.likes)*100).toFixed(0)}%</p>
                                         </div>
                                     </div>
 
