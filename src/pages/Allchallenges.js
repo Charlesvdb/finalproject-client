@@ -109,8 +109,10 @@ class Allchallenges extends React.Component {
     }
 
     getAmountNumber(e){
-        Array.from(e.target.parentElement.children).forEach((a) => a.className = "")
-        e.target.className = "active"
+        Array.from(e.target.parentElement.children).forEach(a => 
+            a.classList.remove("active")    
+        )
+        e.target.classList.add("active")
         this.setState({
             ...this.state,
             page: 1,
@@ -186,7 +188,7 @@ class Allchallenges extends React.Component {
 
                                         <div className="satisfactioncontainer">
                                             <div className="leftalignment"><FontAwesomeIcon icon={faBalanceScale}/></div>
-                                            <p className="satisfactionstat">{(challenge.likes/(challenge.dislikes + challenge.likes)*100).toFixed(0)}%</p>
+                                            <p className="satisfactionstat">{(challenge.likes/(challenge.dislikes + challenge.likes)*100).toFixed(0) === "NaN" ? 0 : (challenge.likes/(challenge.dislikes + challenge.likes)*100).toFixed(0)}%</p>
                                         </div>
                                     </div>
 
