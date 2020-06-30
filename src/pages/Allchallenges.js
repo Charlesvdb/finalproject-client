@@ -109,8 +109,10 @@ class Allchallenges extends React.Component {
     }
 
     getAmountNumber(e){
-        Array.from(e.target.parentElement.children).forEach((a) => a.className = "")
-        e.target.className = "active"
+        Array.from(e.target.parentElement.children).forEach(a => 
+            a.classList.remove("active")    
+        )
+        e.target.classList.add("active")
         this.setState({
             ...this.state,
             page: 1,
