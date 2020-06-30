@@ -42,9 +42,9 @@ class Friendsfollowers extends React.Component {
         })
     }
 
-    searchFriends(e){ // eslint-disable-next-line
-        console.log(getUser)
-        let friendsearched = this.state.friends.filter(friend => {
+    searchFriends(e){ 
+        console.log(getUser) 
+        let friendsearched = this.state.friends.filter(friend => { 
             if(friend.username){
                 if(friend.username.toLowerCase().includes(e.target.value.toLowerCase())){
                     return true

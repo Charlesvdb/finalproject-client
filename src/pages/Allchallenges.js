@@ -1,6 +1,7 @@
 import React from 'react'
 import DefaultLayout from "../layout/Default"
 import Challengebox from '../components/Challengebox'
+import Pagination from "../components/Pagination"
 import axios from "axios";
 import "./Allchallenges.css"
 import { faThumbsUp } from "@fortawesome/free-solid-svg-icons";
@@ -15,7 +16,9 @@ class Allchallenges extends React.Component {
 
         this.state = {
            challenges: [],
-           searchChallenges: []
+           searchChallenges: [],
+           pagepick: 4,
+           page: 1
         }
 
         this.onDelete=this.onDelete.bind(this)
@@ -24,6 +27,9 @@ class Allchallenges extends React.Component {
         this.searchChallenges=this.searchChallenges.bind(this)
         this.challengestotal=this.challengestotal.bind(this)
         this.handleLike=this.handleLike.bind(this)
+        this.pageUp=this.pageUp.bind(this)
+        this.pageDown=this.pageDown.bind(this)
+        this.getAmountNumber = this.getAmountNumber.bind(this);
     }
 
     componentDidMount(){
@@ -33,7 +39,6 @@ class Allchallenges extends React.Component {
             withCredentials: true
         })
         .then(response => {
-            console.log(response)
             let challengeslist = response.data;
             this.setState({challenges: challengeslist, searchChallenges:challengeslist})
         })
@@ -103,8 +108,42 @@ class Allchallenges extends React.Component {
         })
     }
 
+    getAmountNumber(e){
+        Array.from(e.target.parentElement.children).forEach((a) => a.className = "")
+        e.target.className = "active"
+        this.setState({
+            ...this.state,
+            page: 1,
+            pagepick: parseInt(e.target.textContent)
+        })
+        console.log("getamountnumber is used here")
+        console.log(this.state)
+    }    
+
+    pageUp(){
+        this.setState({
+            ...this.state,
+            page: (this.state.challenges.length - (this.state.page * this.state.pagepick) > 0) ? this.state.page + 1 : this.state.page
+        })
+        console.log("pageup is used here")
+        console.log(this.state)
+    }
+
+    pageDown(){
+        this.setState({
+            ...this.setState,
+            page: ((this.state.page-1) < 1) ? 1 : (this.state.page - 1)
+        })
+        console.log("pagedown is used here")
+        console.log(this.state)
+    }
+
 
     render(){
+
+        const start = this.state.pagepick * (this.state.page-1)
+        const end = (this.state.pagepick * this.state.page)
+
         return (
             <DefaultLayout>
                 <div className="challengeoverviewlist">
@@ -129,8 +168,8 @@ class Allchallenges extends React.Component {
                     </div>
 
                     <div className="challengeboxes">
-                        {    
-                        this.state.searchChallenges.map(challenge => 
+                        {         
+                        this.state.searchChallenges.slice(start,end).map(challenge => 
                             (
                                 <div className="totalbox" key={challenge._id}>
 
@@ -167,6 +206,10 @@ class Allchallenges extends React.Component {
                             ))                                                                      
                         }
                     </div>
+                
+                    <div className="paginationresult">
+                        <Pagination pageUp={this.pageUp} pageDown={this.pageDown} getAmountNumber={this.getAmountNumber} />
+                    </div>    
                 </div>    
             </DefaultLayout>
         )
