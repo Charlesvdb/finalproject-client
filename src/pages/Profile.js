@@ -9,7 +9,7 @@ class Profile extends React.Component {
 
         this.state = {
           username:"",
-          password:"",
+        //   password:"",
           location:"",
           file:"",
           error:""
@@ -35,12 +35,11 @@ class Profile extends React.Component {
         axios({
             url: `${process.env.REACT_APP_API_BASE}profile`,
             data: formData,
-            headers: {
-                "content-type":"multipart/form-data"
-            },
-            method: "PUT" 
+            headers: {"content-type":"multipart/form-data"},
+            method: "POST" 
         })
         .then((response)=> {
+            console.log(response.data)
             this.props.history.push("/allchallenges")
         })
         .catch((error)=> {
@@ -56,22 +55,23 @@ class Profile extends React.Component {
                 <h1>Tell us something more about yourself!</h1>
 
                 <div className="settingscontainer">
-                    <img className="imagedaredevilspic" src="/images/profileimage.png" alt="picturesetting" />
+                    <img className="imagedaredevilspic" src="/images/profileimage.png" alt="picturesetting" /> 
 
-                    <p>{this.state.username}</p>
-                    <p>{this.state.location}</p>
+                    {/* <p>{this.state.username}</p>
+                    <p>{this.state.location}</p> */}
                 </div>    
 
                 <form className="formcontainerprofile" onSubmit={this.handleFormSubmit}>
                     <div className="userpart">
+                        <p>heleloooooooooooooooooooooooooooooooooooooooo</p>
                         <label className="userlabel" htmlFor="username">Username:</label><br></br>
                         <input className="userform" type="text" name="username" value={this.state.username} placeholder="Please edit your username here!" onChange={(e) => this.handleChange(e)}></input>
                     </div>
 
-                    <div className="passwordpart">
+                    {/* <div className="passwordpart">
                         <label className="passwordlabel" htmlFor="password">Password:</label><br></br>
                         <input className="passwordform" type="text" name="password" value={this.state.password} placeholder="Please edit your password here!" onChange={(e) => this.handleChange(e)}></input>
-                    </div>
+                    </div> */}
 
                     <div className="locationpart">
                         <label className="locationlabel" htmlFor="location">Location:</label><br></br>
