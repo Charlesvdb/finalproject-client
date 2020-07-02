@@ -118,8 +118,6 @@ class Allchallenges extends React.Component {
             page: 1,
             pagepick: parseInt(e.target.textContent)
         })
-        console.log("getamountnumber is used here")
-        console.log(this.state)
     }    
 
     pageUp(){
@@ -127,8 +125,6 @@ class Allchallenges extends React.Component {
             ...this.state,
             page: (this.state.challenges.length - (this.state.page * this.state.pagepick) > 0) ? this.state.page + 1 : this.state.page
         })
-        console.log("pageup is used here")
-        console.log(this.state)
     }
 
     pageDown(){
@@ -136,8 +132,6 @@ class Allchallenges extends React.Component {
             ...this.setState,
             page: ((this.state.page-1) < 1) ? 1 : (this.state.page - 1)
         })
-        console.log("pagedown is used here")
-        console.log(this.state)
     }
 
 
