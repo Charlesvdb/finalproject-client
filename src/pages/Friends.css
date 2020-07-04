@@ -46,9 +46,12 @@
 	margin-right: 30px;
 }
 
-.innercirclecontainer,
-.yourfollowerscontainer{
-	background-color: lightgrey;
+.innercirclecontainer{
+	background-color: lemonchiffon;
+}
+
+.peopleyoufollowcontainer{
+	background-color: linen;
 }
 
 .innercirclecontainer{

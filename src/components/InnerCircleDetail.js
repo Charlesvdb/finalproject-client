@@ -16,7 +16,7 @@ class InnerCircleDetail extends React.Component {
                 <div className="innercirclebox">
                     <img className="imagedaredevilspicdetailinnercircle" src="/images/profileimage.png" alt="picturesetting" />
                     <p className="friend">{this.props.username}</p>
-                    <p className="friend">{this.props.location}</p>
+                    <button className="removefrominnercircle" onClick={(e)=> this.props.deleteCircle(this.props.id)}>Remove!</button>
                 </div>
         )
     }
