@@ -18,6 +18,7 @@ class Friendsfollowers extends React.Component {
         
         this.searchFriends=this.searchFriends.bind(this)
         this.addToInnerCircle=this.addToInnerCircle.bind(this)
+        this.deleteFromInnerCircle=this.deleteFromInnerCircle.bind(this)
     }
 
     componentDidMount(){ 
@@ -68,6 +69,14 @@ class Friendsfollowers extends React.Component {
         })
     }
 
+    deleteFromInnerCircle(iddelete){
+        let newInnerCircle = this.state.innerCircle.filter(friend => friend !== iddelete)
+        this.setState({
+            ...this.state,
+            innerCircle : newInnerCircle
+        })
+    }
+
     render() {
         return (
             <DefaultLayout>
@@ -97,28 +106,6 @@ class Friendsfollowers extends React.Component {
                 </div>
             </div> 
 
-            <div className="innercirclecontainer">
-                <h1>Your inner circle selection</h1>
-
-                <div className="innercircleboxes">
-                    {
-                        this.state.friends.filter(friend => (this.state.innerCircle).includes(friend._id)).length > 0 ? 
-                            this.state.friends.filter(friend => (this.state.innerCircle).includes(friend._id)).map(inner =>
-                            <div key={inner._id}>
-                                <InnerCircleDetail 
-                                    key={inner._id}
-                                    id={inner._id}
-                                    username={inner.username}
-                                    location={inner.location}
-                                />
-                            </div>
-                            )
-                            :
-                            <p>No inner circle friends available at the moment</p>        
-                    }
-                </div>
-            </div>
-
             {/* <div className="peopleyoufollowcontainer">
                 <h1>People you follow</h1>
                 <div className="friendsboxes" >
@@ -135,9 +122,33 @@ class Friendsfollowers extends React.Component {
                         )   
                     }
                 </div>
+            </div> */}
+
+
+            <div className="innercirclecontainer">
+                <h1>Your inner circle selection</h1>
+
+                <div className="innercircleboxes">
+                    {
+                        this.state.friends.filter(friend => (this.state.innerCircle).includes(friend._id)).length > 0 ? 
+                            this.state.friends.filter(friend => (this.state.innerCircle).includes(friend._id)).map(inner =>
+                            <div key={inner._id}>
+                                <InnerCircleDetail 
+                                    key={inner._id}
+                                    id={inner._id}
+                                    username={inner.username}
+                                    location={inner.location}
+                                    deleteCircle={this.deleteFromInnerCircle}
+                                />
+                            </div>
+                            )
+                            :
+                            <p>No inner circle friends available at the moment</p>        
+                    }
+                </div>
             </div>
 
-            <div className="yourfollowerscontainer">
+            {/* <div className="yourfollowerscontainer">
                 <h1>Your followers</h1>
                 <div className="friendsboxes" >
                     {
