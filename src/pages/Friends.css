@@ -6,7 +6,7 @@
 }
 
 .friendlabel{
-    margin-right: 370px;
+    margin-right: 380px;
     color: red;
 }
 
@@ -32,7 +32,25 @@
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-	margin-top: 50px;
+	margin-top: 20px;
 	margin-left: 30px;
 	margin-right: 30px;
+}
+
+.innercircleboxes{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-top: 20px;
+	margin-left: 30px;
+	margin-right: 30px;
+}
+
+.innercirclecontainer,
+.yourfollowerscontainer{
+	background-color: lightgrey;
+}
+
+.innercirclecontainer{
+	margin-bottom: 30px;
 }

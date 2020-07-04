@@ -38,7 +38,7 @@ class Navbar extends React.Component {
                 <Link to="/allchallenges"><strong>All challenges</strong></Link>
                 <Link to="/startchallenge"><strong>Start a challenge</strong></Link>
                 <Link to="/profile"><strong>Profile settings</strong></Link>
-                <Link to="/friends"><strong>Friends</strong></Link>
+                <Link to="/friends"><strong>Community</strong></Link>
                 <Link to="/about"><strong>About</strong></Link>
                 <Link to="/todo"><strong>To-do</strong></Link>
                 <Link to="/" onClick={this.handleLogout}><strong>Log out</strong></Link>

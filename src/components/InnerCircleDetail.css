@@ -1,14 +1,14 @@
-.friendbox{
+.innercirclebox{
     border: 2px solid black;
-    width: 300px;
-    height: 310px;
+    width: 200px;
+    height: 210px;
     margin-left: 10px;
     margin-top: 5px;
 }
 
-.imagedaredevilspicdetail{
-    width:160px;
-    height:160px;
+.imagedaredevilspicdetailinnercircle{
+    width:150px;
+    height:150px;
     margin-top: 7px;
 }
 

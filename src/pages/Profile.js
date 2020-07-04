@@ -63,7 +63,6 @@ class Profile extends React.Component {
 
                 <form className="formcontainerprofile" onSubmit={this.handleFormSubmit}>
                     <div className="userpart">
-                        <p>heleloooooooooooooooooooooooooooooooooooooooo</p>
                         <label className="userlabel" htmlFor="username">Username:</label><br></br>
                         <input className="userform" type="text" name="username" value={this.state.username} placeholder="Please edit your username here!" onChange={(e) => this.handleChange(e)}></input>
                     </div>
