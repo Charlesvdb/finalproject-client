@@ -4,6 +4,7 @@ import './Friends.css'
 import Axios from 'axios'
 import Frienddetail from '../components/Frienddetail'
 import InnerCircleDetail from '../components/InnerCircleDetail'
+import PeopleYouFollow from '../components/PeopleYouFollow'
 import { getUser } from '../utils/auth'
 
 class Friendsfollowers extends React.Component {
@@ -77,6 +78,10 @@ class Friendsfollowers extends React.Component {
         })
     }
 
+    RemovePeopleYouFollow(){
+        //
+    }
+
     render() {
         return (
             <DefaultLayout>
@@ -108,15 +113,15 @@ class Friendsfollowers extends React.Component {
 
             {/* <div className="peopleyoufollowcontainer">
                 <h1>People you follow</h1>
-                <div className="friendsboxes" >
+                <div className="peopleyoufollowboxes" >
                     {
                         this.state.searchFriends.map(friend =>
                             <div key={friend._id}>
-                                <Frienddetail 
+                                <PeopleYouFollow 
                                     key={friend._id}
                                     id={friend._id}
                                     username={friend.username}
-                                    location={friend.location}
+                                    peopleFollow={this.RemovePeopleYouFollow}
                                 />
                             </div>
                         )   
@@ -137,7 +142,6 @@ class Friendsfollowers extends React.Component {
                                     key={inner._id}
                                     id={inner._id}
                                     username={inner.username}
-                                    location={inner.location}
                                     deleteCircle={this.deleteFromInnerCircle}
                                 />
                             </div>
