@@ -129,8 +129,6 @@ class Friendsfollowers extends React.Component {
                 </div>
             </div> */}
 
-            <p>e</p>
-
 
             <div className="innercirclecontainer">
                 <h1>Your inner circle selection</h1>
