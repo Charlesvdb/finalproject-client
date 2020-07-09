@@ -39,13 +39,26 @@ class Challengedetail extends React.Component {
             <DefaultLayout>
                 <div className="challengedetailpage">
                     <div className="headercontainer">
-                        <div className="challengesectionbox">
-                            <h1>{this.state.title}</h1>
-                            <p>{this.state.description}</p>
+                        <div className="leftpart">
+                            <div className="challengesectionbox">
+                                <h1>{this.state.title}</h1>
+                                <p>{this.state.description}</p>
+                            </div>
+
+                            <div className="takechallengebox">
+                                <TakeChallenge/>
+                            </div>
                         </div>
 
-                        <div className="takechallengebox">
-                            <TakeChallenge/>
+                        <div className="statsbox rightpart">
+                            <p className="titlestat">Key Statistics</p>
+                            <div className="statslist">
+                                <p>Date posted:</p>
+                                <p>Amount of responses: </p>
+                                <p>Amount of likes: </p>
+                                <p>Amount of dislikes: </p>
+                                <p>Amount of superlikes: </p>
+                            </div>
                         </div>
                     </div>
                     

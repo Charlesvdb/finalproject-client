@@ -1,9 +1,6 @@
 .formcontainer{
-    margin-top: 10px;
-    margin-bottom: 15px;
     border: 2px solid red;
-    margin-left: 100px;
-    margin-right: 100px;
+    margin-top: 5px;
 }
 
 .titletakechallengebow{
