@@ -15,7 +15,7 @@ class PeopleYouFollow extends React.Component {
                 <div className="peopleyoufollowbox">
                     <img className="imagedaredevilspicdetailpeopleyoufollow" src="/images/profileimage.png" alt="picturesetting" />
                     <p className="friend">{this.props.username}</p>
-                    <button className="followbutton" onClick={(e)=> this.props.peopleFollow(this.props.id)}>Stop following!</button>
+                    <button className="followbutton" onClick={(e)=> this.props.removePeopleFollow(this.props.id)}>Stop following!</button>
                 </div>
         )
     }

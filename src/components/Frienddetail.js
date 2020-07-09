@@ -16,7 +16,7 @@ class Frienddetail extends React.Component {
                     <img className="imagedaredevilspicdetail" src="/images/profileimage.png" alt="picturesetting" />
                     <p className="friend">{this.props.username}</p>
                     <p className="friend">{this.props.location}</p>
-                    <button className="followbutton">Follow user!</button>
+                    <button className="followbutton" onClick={(e) => this.props.addPeopleFollow(this.props.id)}>Follow user!</button>
                     <button className="friendbutton" onClick={(e)=> this.props.innerCircle(this.props.id)}>Add to inner circle!</button>
                 </div>
         )

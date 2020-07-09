@@ -6,6 +6,8 @@ import Frienddetail from '../components/Frienddetail'
 import InnerCircleDetail from '../components/InnerCircleDetail'
 import PeopleYouFollow from '../components/PeopleYouFollow'
 import { getUser } from '../utils/auth'
+import qs from "qs"
+import axios from "axios"
 
 class Friendsfollowers extends React.Component {
     constructor() {
@@ -78,6 +80,22 @@ class Friendsfollowers extends React.Component {
         })
     }
 
+    addPeopleFollow(idpeopleyoufollow){
+        axios({
+            method: "POST",
+            url: `${process.env.REACT_APP_API_BASE}/friends`,
+            data: qs.stringify(idpeopleyoufollow),
+            headers: {"content-type": "application/x-www-form-urlencoded"},
+            withCredentials: true
+        })
+        .then(() => {
+            console.log("charles")
+        })
+        .catch((error) => {
+            console.log(error.response)
+        })
+    }
+
     RemovePeopleYouFollow(){
         //
     }
@@ -104,6 +122,7 @@ class Friendsfollowers extends React.Component {
                                     username={friend.username}
                                     location={friend.location}
                                     innerCircle={this.addToInnerCircle}
+                                    peopleFollow={this.addPeopleFollow}
                                 />
                             </div>
                         )   
@@ -111,7 +130,7 @@ class Friendsfollowers extends React.Component {
                 </div>
             </div> 
 
-            {/* <div className="peopleyoufollowcontainer">
+            <div className="peopleyoufollowcontainer">
                 <h1>People you follow</h1>
                 <div className="peopleyoufollowboxes" >
                     {
@@ -121,13 +140,13 @@ class Friendsfollowers extends React.Component {
                                     key={friend._id}
                                     id={friend._id}
                                     username={friend.username}
-                                    peopleFollow={this.RemovePeopleYouFollow}
+                                    removePeopleFollow={this.RemovePeopleYouFollow}
                                 />
                             </div>
                         )   
                     }
                 </div>
-            </div> */}
+            </div>
 
 
             <div className="innercirclecontainer">
