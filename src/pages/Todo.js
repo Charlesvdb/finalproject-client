@@ -15,6 +15,7 @@ class Todo extends React.Component {
         }
         this.handleChange=this.handleChange.bind(this)
         this.handleSubmit=this.handleSubmit.bind(this)
+        this.sortAZ=this.sortAZ.bind(this)
     }
 
     componentDidMount(){
@@ -76,11 +77,51 @@ class Todo extends React.Component {
         .catch(err => console.log(err))
     }
 
+    sortAZ(){
+        let aztodos = this.state.todos.sort((a,b) => {
+            return a.title > b.title ? 1 : -1
+        })
+        this.setState({
+            todos: aztodos
+        })
+    }
+
+    sortZA(){
+        let zatodos = this.state.todos.sort((a,b) => {
+            return a.title > b.title ? -1 : 1
+        })
+        this.setState({
+            todos: zatodos
+        })
+    }
+
+    sortByLengthHL(){
+        let lengthtodos = this.state.todos.sort((a,b) => {
+            return a.title.length < b.title.length ? 1 : -1
+        })
+        console.log(lengthtodos)
+        this.setState({
+            todos: lengthtodos
+        })
+        console.log(lengthtodos)
+    }
+
+    sortByLengthLH(){
+        let lengthtodos = this.state.todos.sort((a,b) => {
+            return a.title.length > b.title.length ? 1 : -1
+        })
+        console.log(lengthtodos)
+        this.setState({
+            todos: lengthtodos
+        })
+        console.log(lengthtodos)
+    }
+
     render() {
         return (
             <div>
                 <DefaultLayout>
-                <h1>To-do things for this app</h1>
+                <h1>To-do things for this app ({this.state.todos.length} outstanding to-do's)</h1>
                 <h2 className="todotitle">Add your to-do here, Charles!</h2>
                 <form className="todocontainer" onSubmit={this.handleSubmit}> 
                     <div className="inputbuttonandfield">    
@@ -93,6 +134,13 @@ class Todo extends React.Component {
                         </div> 
                     </div>
                 </form> 
+
+                <div className="sortcontainertodos">
+                    <div className="sortbutton" onClick={(e) => this.sortAZ()}>Sort A-Z</div>
+                    <div className="sortbutton" onClick={(e) => this.sortZA()}>Sort Z-A</div>
+                    <div className="sortbutton" onClick={(e) => this.sortByLengthHL()}>Sort by length High-Low</div>
+                    <div className="sortbutton" onClick={(e) => this.sortByLengthLH()}>Sort by length Low-High</div>
+                </div>
 
                 {
                     this.state.todos.map(element=> (
