@@ -53,11 +53,11 @@ class Challengedetail extends React.Component {
                         <div className="statsbox rightpart">
                             <p className="titlestat">Key Statistics</p>
                             <div className="statslist">
-                                <p>Date posted:</p>
-                                <p>Amount of responses: </p>
-                                <p>Amount of likes: </p>
-                                <p>Amount of dislikes: </p>
-                                <p>Amount of superlikes: </p>
+                                <p>Date posted: <strong>{this.state.title.length}</strong></p>
+                                <p>Amount of responses: <strong>{this.state.title.length}</strong></p>
+                                <p>Amount of likes: <strong>{this.state.title.length}</strong></p>
+                                <p>Amount of dislikes: <strong>{this.state.title.length}</strong></p>
+                                <p>Amount of superlikes: <strong>{this.state.title.length}</strong></p>
                             </div>
                         </div>
                     </div>
