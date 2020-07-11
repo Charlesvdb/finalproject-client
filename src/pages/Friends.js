@@ -102,6 +102,48 @@ class Friendsfollowers extends React.Component {
         //tobeadded
     }
 
+    sortFriendsAZ(){
+        let friendsAZ = this.state.searchFriends.sort((a,b) => {
+            return a.username > b.username? 1 : -1
+        })
+        this.setState({
+            searchFriends: friendsAZ
+        })
+    }
+
+    sortFriendsZA(){
+        let friendsZA = this.state.searchFriends.sort((a,b) => {
+            return a.username < b.username? 1 : -1
+        })
+        this.setState({
+            searchFriends: friendsZA
+        })
+    }
+
+    sortLengthHL(){
+        let lengthHL = this.state.searchFriends.sort((a,b) => {
+            return a.username.length < b.username.length ? 1 : -1
+        })
+        this.setState({
+            searchFriends: lengthHL
+        })
+    }
+
+    sortLengthLH(){
+        let lengthLH = this.state.searchFriends.sort((a,b) => {
+            return a.username.length > b.username.length ? 1 : -1
+        })
+        this.setState({
+            searchFriends: lengthLH
+        })
+    }
+
+    randomSorter(){
+        // let randomSorter = this.state.searchFriends.sort((a,b) => {
+        //     if()
+        // })
+    }
+
     render() {
         return (
             <DefaultLayout>
@@ -113,6 +155,14 @@ class Friendsfollowers extends React.Component {
                         <input className="friendform" type="text" name="friend" value={this.state.friend} placeholder="Type a username here!" onChange={this.searchFriends}></input>
                     </div>
                 </form>
+
+                <div className="sortbuttons">
+                    <button className="sortbuttonfriends" onClick={(e) => this.sortFriendsAZ()}>Sort by name (A-Z)</button>
+                    <button className="sortbuttonfriends" onClick={(e) => this.sortFriendsZA()}>Sort by name (Z-A)</button>
+                    <button className="sortbuttonfriends" onClick={(e) => this.sortLengthHL()}>Sort by length (High-Low)</button>
+                    <button className="sortbuttonfriends" onClick={(e) => this.sortLengthLH()}>Sort by length (Low-High)</button>
+                    <button className="sortbuttonfriends" onClick={(e) => this.randomSorter()}>Random sorter mix</button>
+                </div>
 
                 <div className="friendsboxes" >
                     {
