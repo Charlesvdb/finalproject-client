@@ -169,7 +169,7 @@ class Allchallenges extends React.Component {
                             (
                                 <div className="totalbox" key={challenge._id}>
 
-                                    <div className="likedislikesbox">
+                                    <div className="likedislikesboxchallenge">
                                         <div className="likecontainer">
                                             <div className="leftalignment"><FontAwesomeIcon icon={faThumbsUp} onClick={()=>this.handleLike(challenge._id)}/></div>
                                                 <p className="likestat">{challenge.likes}</p>

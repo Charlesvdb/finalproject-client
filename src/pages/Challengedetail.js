@@ -58,12 +58,12 @@ class Challengedetail extends React.Component {
                             <div className="likedislikesbox">
                                 <div className="likecontainer">
                                     <div className="leftalignment"><FontAwesomeIcon icon={faThumbsUp}/></div>
-                                        <p className="likestat">1 likes</p>
+                                        <p className="likestat">1 like</p>
                                 </div>
                                 
                                 <div className="dislikecontainer">
                                     <div className="leftalignment"><FontAwesomeIcon icon={faThumbsDown}/></div>
-                                    <p className="dislikestat">1 dislikes</p>
+                                    <p className="dislikestat">1 dislike</p>
                                 </div>
 
                                 <div className="satisfactioncontainer">
