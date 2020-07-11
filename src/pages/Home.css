@@ -31,3 +31,21 @@
 	position:relative;
 	top:1px;
 }
+
+.row{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+.explanationtext{
+	font-size: 25px;
+	font-weight: bolder;
+	line-height: 3.5;
+}
+
+.column2{
+	margin-top: 60px;
+	margin-left: 25px;
+}

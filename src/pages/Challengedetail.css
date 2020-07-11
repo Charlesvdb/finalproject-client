@@ -23,18 +23,23 @@
     display: flex;
     flex-direction: column;
     float: left;
+    margin-right: 2px;
 }
 
 .statsbox{
-    height: 407px;
-    width: 340px;
+    height: 270px;
+    width: 280px;
     background-color: red;
     color: white;
-    margin-left: 5px;
+    margin-top: 4px;
+    border: 1px solid red;
 }
 
 .rightpart{
+    display: flex;
+    flex-direction: column;
     float: right;
+    margin-left: 5px;
 }
 
 .headercontainer{
@@ -52,12 +57,26 @@
 }
 
 .statslist{
-    line-height: 2.5;
+    line-height: 1.2;
     text-align: left;
-    padding-left: 85px;
+    padding-left: 55px;
 }
 
 .boldstat{
     font-size: 18px;
     font-weight: bolder;
+}
+
+.likedislikesbox{
+    width: 278px;
+    height: 124px;
+    margin-left: 0px;
+    margin-top: 1px;
+}
+
+.likecontainer,
+.dislikecontainer,
+.satisfactioncontainer{
+    padding-left: 15px;
+    line-height: 0.7;
 }

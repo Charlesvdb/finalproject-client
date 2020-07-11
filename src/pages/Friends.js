@@ -4,10 +4,10 @@ import './Friends.css'
 import Axios from 'axios'
 import Frienddetail from '../components/Frienddetail'
 import InnerCircleDetail from '../components/InnerCircleDetail'
-import PeopleYouFollow from '../components/PeopleYouFollow'
+// import PeopleYouFollow from '../components/PeopleYouFollow'
 import { getUser } from '../utils/auth'
 import qs from "qs"
-import axios from "axios"
+
 
 class Friendsfollowers extends React.Component {
     constructor() {
@@ -81,19 +81,21 @@ class Friendsfollowers extends React.Component {
     }
 
     addPeopleFollow(idpeopleyoufollow){
-        // axios({
-        //     method: "POST",
-        //     url: `${process.env.REACT_APP_API_BASE}/friends`,
-        //     data: qs.stringify(idpeopleyoufollow),
-        //     headers: {"content-type": "application/x-www-form-urlencoded"},
-        //     withCredentials: true
-        // })
-        // .then(() => {
-        //     console.log("charles")
-        // })
-        // .catch((error) => {
-        //     console.log(error.response)
-        // })
+        Axios({
+            method: "POST",
+            url: `${process.env.REACT_APP_API_BASE}/friends`,
+            data: qs.stringify(idpeopleyoufollow),
+            headers: {"content-type": "application/x-www-form-urlencoded"},
+            withCredentials: true
+        })
+        .then(() => {
+            console.log("charles")
+            console.log(idpeopleyoufollow)
+            console.log("charles")
+        })
+        .catch((error) => {
+            console.log(error.response)
+        })
     }
 
     RemovePeopleYouFollow(){
@@ -104,7 +106,7 @@ class Friendsfollowers extends React.Component {
         return (
             <DefaultLayout>
             <div className="friendsoverviewcontainer">
-                <h1>Our community</h1>
+                <h1>Our community ({this.state.friends.length} registered users)</h1>
                 <form className="friends">               
                     <div className="titlepart">
                         <label className="friendlabel" htmlFor="friend">Search for Users :</label><br></br>
@@ -130,8 +132,8 @@ class Friendsfollowers extends React.Component {
                 </div>
             </div> 
 
-            <div className="peopleyoufollowcontainer">
-                <h1>People you follow</h1>
+            {/* <div className="peopleyoufollowcontainer">
+                <h1>People you follow ({this.state.friends.length} following)</h1>
                 <div className="peopleyoufollowboxes" >
                     {
                         this.state.searchFriends.map(friend =>
@@ -146,11 +148,11 @@ class Friendsfollowers extends React.Component {
                         )   
                     }
                 </div>
-            </div>
+            </div> */}
 
 
             <div className="innercirclecontainer">
-                <h1>Your inner circle selection</h1>
+                <h1>Your inner circle selection ({this.state.innerCircle.length})</h1>
 
                 <div className="innercircleboxes">
                     {
@@ -188,7 +190,6 @@ class Friendsfollowers extends React.Component {
                     }
                 </div>
             </div> */}
-
             </DefaultLayout>
         )
     }

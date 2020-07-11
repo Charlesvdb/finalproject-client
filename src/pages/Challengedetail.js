@@ -4,6 +4,10 @@ import './Challengedetail.css'
 import Responsechallenge from '../components/Responsechallenge'
 import axios from "axios"
 import TakeChallenge from "../components/Takechallenge"
+import { faThumbsUp } from "@fortawesome/free-solid-svg-icons";
+import { faThumbsDown } from "@fortawesome/free-solid-svg-icons";
+import { faBalanceScale } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class Challengedetail extends React.Component {
     constructor() {
@@ -50,16 +54,38 @@ class Challengedetail extends React.Component {
                             </div>
                         </div>
 
-                        <div className="statsbox rightpart">
-                            <p className="titlestat">Key Statistics</p>
-                            <div className="statslist">
-                                <p>Date posted: <strong>{this.state.title.length}</strong></p>
-                                <p>Amount of responses: <strong>{this.state.title.length}</strong></p>
-                                <p>Amount of likes: <strong>{this.state.title.length}</strong></p>
-                                <p>Amount of dislikes: <strong>{this.state.title.length}</strong></p>
-                                <p>Amount of superlikes: <strong>{this.state.title.length}</strong></p>
+                        <div className="rightpart">
+                            <div className="likedislikesbox">
+                                <div className="likecontainer">
+                                    <div className="leftalignment"><FontAwesomeIcon icon={faThumbsUp}/></div>
+                                        <p className="likestat">1 likes</p>
+                                </div>
+                                
+                                <div className="dislikecontainer">
+                                    <div className="leftalignment"><FontAwesomeIcon icon={faThumbsDown}/></div>
+                                    <p className="dislikestat">1 dislikes</p>
+                                </div>
+
+                                <div className="satisfactioncontainer">
+                                    <div className="leftalignment"><FontAwesomeIcon icon={faBalanceScale}/></div>
+                                    <p className="satisfactionstat">50% likes/dislikes</p>
+                                </div>
                             </div>
+
+                            <div className="statsbox">
+                                <p className="titlestat">Key Statistics</p>
+                                <div className="statslist">
+                                    <p>Date posted: <strong>{this.state.title.length}</strong></p>
+                                    <p>Amount of responses: <strong>{this.state.title.length}</strong></p>
+                                    <p>Amount of likes: <strong>{this.state.title.length}</strong></p>
+                                    <p>Amount of dislikes: <strong>{this.state.title.length}</strong></p>
+                                    <p>Amount of superlikes: <strong>{this.state.title.length}</strong></p>
+                                </div>
                         </div>
+                        </div>
+
+
+
                     </div>
                     
                     <div className="responsechallenges">

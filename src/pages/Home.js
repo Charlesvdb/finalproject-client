@@ -40,8 +40,13 @@ class Home extends React.Component {
                 <br/>
 
                 <div className="row"> 
-                    <div className="column">
-                        <img src="/images/horsemanning1.jpg" style={{width:545}} alt=""/>
+                    <div className="column1">
+                        <p className="explanationtext">Challenge your best friends!</p>
+                        <p className="explanationtext">Get responses on your challenges!</p>
+                        <p className="explanationtext">Make friends and have fun!</p>
+                    </div>
+                    <div className="column2">
+                        <img src="/images/horsemanning1.jpg" style={{width:400}} alt=""/>
                     </div>
                 </div>
 
