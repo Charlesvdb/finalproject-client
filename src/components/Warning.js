@@ -12,7 +12,7 @@ class Warning extends React.Component {
 
     render() {
         return (
-            <p className="warning">WARNING: We are not responsible for any injuries... Your StreetCredits are worth nothing in your grave, idiot! #safetyfirst</p>
+            <p className="warning">  An app to challenge friends and have fun! | WARNING: Not responsible for any injuries...#safetyfirst</p>
         )
     }
 }

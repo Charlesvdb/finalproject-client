@@ -29,7 +29,7 @@ class Home extends React.Component {
                 <Warning/>
                 
                 <div>
-                    <h1>StreetCredit</h1>
+                    <img className="logostreethome" src="/images/logo.png" alt="logo" />
                 </div>
                 
                 <div className="buttoncontainer">
@@ -37,16 +37,26 @@ class Home extends React.Component {
                     <Link to="/login"><button className="signuplogin">Log in & enjoy the ride!</button></Link>
                 </div>
 
-                <br/>
-
                 <div className="row"> 
-                    <div className="column1">
-                        <p className="explanationtext">Challenge your best friends!</p>
-                        <p className="explanationtext">Get responses on your challenges!</p>
-                        <p className="explanationtext">Make friends and have fun!</p>
-                    </div>
                     <div className="column2">
-                        <img src="/images/horsemanning1.jpg" style={{width:400}} alt=""/>
+                        <div className="redline"></div>
+                        <div className="redline"></div>
+                        
+                        <div className="rowimages">
+                            <div className="parent1">
+                                <img src="/images/iphone.jpg" className="imagehome1" alt=""/>
+                                <img className="logostreethomesmall1" src="/images/logo.png" alt="logo" />
+                                <img className="icebucket" src="/images/icebucket.jpg" alt="logo" />
+                            </div>
+
+                            <img src="/images/horsemanning1.jpg" className="imagehome2" alt=""/>
+
+                            <div className="parent3">
+                                <img src="/images/iphone.jpg" className="imagehome3" alt=""/>
+                                <img className="logostreethomesmall3" src="/images/logo.png" alt="logo" />
+                                <img className="plankinghome" src="/images/plankinghome.jpg" alt="logo" />
+                            </div>
+                        </div>
                     </div>
                 </div>
 

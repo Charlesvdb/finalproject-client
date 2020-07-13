@@ -40,12 +40,97 @@
 }
 
 .explanationtext{
-	font-size: 25px;
+	font-size: 35px;
 	font-weight: bolder;
 	line-height: 3.5;
+	color: red;
 }
 
 .column2{
-	margin-top: 60px;
-	margin-left: 25px;
+	margin-top: 10px;
 }
+
+.logostreethome{
+	width: 550px;
+}
+
+.redline{
+	background-color: red;
+	width: 1878px;
+	height: 10px;
+	margin-top: 10px;
+}
+
+.coreplace{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+.imagehome1{
+	position: relative;
+	width:250px;
+	border-radius: 55px;
+	margin-top:40px;
+	margin-right:70px;
+}
+
+.logostreethomesmall1{
+	width: 200px;
+	position: absolute;
+	top: 150px;
+	left: 30px;
+}
+
+.icebucket{
+	width: 160px;
+	position: absolute;
+	top: 260px;
+	left: 48px;
+}
+
+.parent1{
+	position: relative;
+	top: 0;
+	left: 0;
+}
+
+.imagehome2{
+	width:500px;
+	border-radius: 35px;
+	margin-top:40px;
+}
+
+.parent3{
+	position: relative;
+	top: 0;
+	left: 0;
+}
+
+.logostreethomesmall3{
+	width: 200px;
+	position: absolute;
+	top: 150px;
+	left: 100px;
+}
+
+.plankinghome{
+	width: 195px;
+	position: absolute;
+	top: 240px;
+	left: 100px;
+}
+
+.imagehome3{
+	width:250px;
+	border-radius: 55px;
+	margin-top:40px;
+	margin-left:70px;
+}
+
+.rowimages{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+

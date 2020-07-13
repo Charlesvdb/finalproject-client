@@ -139,9 +139,12 @@ class Friendsfollowers extends React.Component {
     }
 
     randomSorter(){
-        // let randomSorter = this.state.searchFriends.sort((a,b) => {
-        //     if()
-        // })
+        let randomSorter = this.state.searchFriends.sort((a,b) => {
+           return Math.random() > 0.5 ? 1 : -1
+        })
+        this.setState({
+            searchFriends: randomSorter
+        })
     }
 
     render() {
@@ -161,7 +164,7 @@ class Friendsfollowers extends React.Component {
                     <button className="sortbuttonfriends" onClick={(e) => this.sortFriendsZA()}>Sort by name (Z-A)</button>
                     <button className="sortbuttonfriends" onClick={(e) => this.sortLengthHL()}>Sort by length (High-Low)</button>
                     <button className="sortbuttonfriends" onClick={(e) => this.sortLengthLH()}>Sort by length (Low-High)</button>
-                    <button className="sortbuttonfriends" onClick={(e) => this.randomSorter()}>Random sorter mix</button>
+                    <button className="sortbuttonfriends" onClick={(e) => this.randomSorter()}>Random sorter - mix it up!</button>
                 </div>
 
                 <div className="friendsboxes" >
