@@ -80,23 +80,24 @@ class Friendsfollowers extends React.Component {
         })
     }
 
-    addPeopleFollow(idpeopleyoufollow){
-        Axios({
-            method: "POST",
-            url: `${process.env.REACT_APP_API_BASE}/friends`,
-            data: qs.stringify(idpeopleyoufollow),
-            headers: {"content-type": "application/x-www-form-urlencoded"},
-            withCredentials: true
-        })
-        .then(() => {
-            console.log("charles")
-            console.log(idpeopleyoufollow)
-            console.log("charles")
-        })
-        .catch((error) => {
-            console.log(error.response)
-        })
-    }
+    // addPeopleFollow(idpeopleyoufollow){
+    //     console.log(idpeopleyoufollow)
+    //     Axios({
+    //         method: "POST",
+    //         url: `${process.env.REACT_APP_API_BASE}/friends`,
+    //         data: qs.stringify(idpeopleyoufollow),
+    //         headers: {"content-type": "application/x-www-form-urlencoded"},
+    //         withCredentials: true
+    //     })
+    //     .then(() => {
+    //         console.log("charlesfffff")
+    //         console.log(idpeopleyoufollow)
+    //         console.log("charlesffff")
+    //     })
+    //     .catch((error) => {
+    //         console.log(error.response)
+    //     })
+    // }
 
     RemovePeopleYouFollow(){
         //tobeadded

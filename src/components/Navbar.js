@@ -1,7 +1,8 @@
-import React from "react"
+import React from "react";
 import './Navbar.css';
 import {Link} from "react-router-dom";
-import {logout, getUser} from "../utils/auth"
+import {logout, getUser} from "../utils/auth";
+// const { getUser } = require('../utils/auth'); 
 
 class Navbar extends React.Component {
     constructor() {
@@ -18,6 +19,9 @@ class Navbar extends React.Component {
 
     handleUser(user){
         const theLoggedUser = getUser(user)
+        console.log("charlesttt")
+        console.log(theLoggedUser)
+        console.log("charlesttt")
         return theLoggedUser.username
     }
 
