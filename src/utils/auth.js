@@ -30,7 +30,8 @@ export const login = (user) => {
         data: qs.stringify(user)
     })
     .then((response) => {
-        getUser(response.data)
+        setUser(response.data.user)
+        // getUser(response.data)
     })
     .catch((error) => {
         console.log(error)
@@ -50,7 +51,7 @@ export const getUser = (user) => {
 }
 
 //logout
-export const logout = (user) =>{
+export const logout = (user) => {
     window.localStorage.removeItem("user")
     console.log("user has been logged out of local storage")
 }
