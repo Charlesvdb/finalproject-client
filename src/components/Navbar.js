@@ -19,11 +19,8 @@ class Navbar extends React.Component {
     }
 
     handleUser(user){
-        let theLoggedUser = getUser(user)
-        console.log("charlesttt")
-        console.log(theLoggedUser)
-        console.log("charlesttt")
-        return theLoggedUser.username
+        const theLoggedUser = getUser(user)
+        return theLoggedUser.username || "Guest"
     }
 
     // handleUserImage(user){
@@ -47,9 +44,9 @@ class Navbar extends React.Component {
                 <Link to="/about"><strong>About</strong></Link>
                 <Link to="/todo"><strong>To-do</strong></Link>
                 <Link to="/" onClick={this.handleLogout}><strong>Log out</strong></Link>
-                <p className="welcomemessage">{this.handleUser()} </p>
-                {/* <p className="welcomemessage">Welcome {this.handleUserLocation()}</p> */}
-                {/* <p className="welcomemessage">Welcome {this.handleUserImage()}</p> */}
+                <p className="welcomemessage">{this.handleUser()}</p>
+                {/* <p className="welcomemessage">Welcome {this.handleUserLocation()}</p>
+                <p className="welcomemessage">Welcome {this.handleUserImage()}</p> */}
             </nav>            
         )
     }

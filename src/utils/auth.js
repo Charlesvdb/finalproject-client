@@ -30,8 +30,9 @@ export const login = (user) => {
         data: qs.stringify(user)
     })
     .then((response) => {
-        setUser(response.data.user)
-        // getUser(response.data)
+        // setUser(response.data.user)
+        // setUser(response.data)
+        getUser(response.data)
     })
     .catch((error) => {
         console.log(error)
@@ -47,7 +48,7 @@ export const setUser = (user) => {
 //getUser
 export const getUser = (user) => {
     console.log("user has been GET out of local storage (just before)")
-    return JSON.parse(window.localStorage.getItem("user"))
+    return JSON.parse(window.localStorage.getItem("user")) || {}
 }
 
 //logout

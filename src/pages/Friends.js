@@ -81,7 +81,6 @@ class Friendsfollowers extends React.Component {
     }
 
     // addPeopleFollow(idpeopleyoufollow){
-    //     console.log(idpeopleyoufollow)
     //     Axios({
     //         method: "POST",
     //         url: `${process.env.REACT_APP_API_BASE}/friends`,
@@ -90,9 +89,7 @@ class Friendsfollowers extends React.Component {
     //         withCredentials: true
     //     })
     //     .then(() => {
-    //         console.log("charlesfffff")
     //         console.log(idpeopleyoufollow)
-    //         console.log("charlesffff")
     //     })
     //     .catch((error) => {
     //         console.log(error.response)
