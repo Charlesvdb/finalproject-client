@@ -196,7 +196,7 @@ class Allchallenges extends React.Component {
                                     </Link>
                                 
                                     <button className="deletebutton" onClick={()=> this.onDelete(challenge._id)}>
-                                        Delete
+                                        Delete this
                                     </button>
                                 </div>
                             ))                                                                      
