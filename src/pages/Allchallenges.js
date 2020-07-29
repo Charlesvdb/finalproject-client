@@ -177,7 +177,7 @@ class Allchallenges extends React.Component {
                                         
                                         <div className="dislikecontainer">
                                             <div className="leftalignment"><FontAwesomeIcon icon={faThumbsDown} onClick={()=>this.handleDislike(challenge._id)}/></div>
-                                            <p className="dislikestat">{challenge.dislikes}</p>
+                                            <p className="dislikestat">{challenge.dislikes}1</p>
                                         </div>
 
                                         <div className="satisfactioncontainer">
