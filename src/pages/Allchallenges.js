@@ -155,7 +155,7 @@ class Allchallenges extends React.Component {
                         </button>
 
                         <button onClick={this.sortByDescription} className="sortdescription">
-                            Sort based on DAREDEVILS
+                            Sort based on DAREDEVILSs
                         </button>
 
                         <input className="searchbox" type="text" placeholder="Search for a challenge title here..." onChange={this.searchChallenges} />
