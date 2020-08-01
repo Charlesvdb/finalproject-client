@@ -160,7 +160,7 @@ class Allchallenges extends React.Component {
 
                         <input className="searchbox" type="text" placeholder="Search for a challenge title here..." onChange={this.searchChallenges} />
 
-                        <p className="challengescounterbox">{this.challengestotal()} challenges</p>
+                        <p className="challengescounterbox">{this.challengestotal()} challenge3s</p>
                     </div>
 
                     <div className="challengeboxes">
